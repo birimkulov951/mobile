@@ -66,9 +66,7 @@ dependencies:
   local_auth: ^1.1.11
   encrypt: ^5.0.1
   flutter_html_to_pdf: ^0.7.0
-  open_filex:
-    git:
-      url: https://github.com/abdurakhmon97/changed_open_filex.git
+  open_filex: ^4.3.2
   flutter_local_notifications: ^9.7.0
   rxdart: ^0.27.5
   share: ^2.0.4
@@ -96,9 +94,7 @@ dependencies:
   appmetrica_push: ^1.0.0
   ui_kit:
     path: ui_kit/
-  fast_contacts:
-    git:
-      url: https://github.com/dadagov125/fast_contacts
+  fast_contacts: ^3.0.3
   package_info_plus: ^1.4.2
 
 dev_dependencies:
