@@ -113,7 +113,7 @@ class TransferBanksScreenWidgetModel
     List<BankCardEntity> bankCards;
     if (_phoneNumber != null) {
       final response = await model.getCardsByPhoneNumber(_phoneNumber!);
-      bankCards = response?.bankCardsData.paynetCards ?? [];
+      bankCards = response?.bankCardsData.pynetCards ?? [];
     } else {
       bankCards = _arguments.bankCards;
     }

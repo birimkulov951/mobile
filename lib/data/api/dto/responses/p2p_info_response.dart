@@ -73,14 +73,14 @@ class P2PInfoByLoginResponse extends P2PInfoResponse {
     super.receiverCardType,
     super.amount,
     super.type,
-    this.hasPaynetCard,
+    this.hasPynetCard,
     this.hasOtherCard,
     this.statusCode,
     this.statusMessage,
     this.historyId,
   });
 
-  final bool? hasPaynetCard;
+  final bool? hasPynetCard;
   final bool? hasOtherCard;
   final int? statusCode;
   final String? statusMessage;

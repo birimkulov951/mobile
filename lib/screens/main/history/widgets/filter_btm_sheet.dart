@@ -12,7 +12,7 @@ import 'package:mobile_ultra/screens/main/history/widgets/operation_item.dart';
 import 'package:mobile_ultra/screens/main/history/widgets/period_item.dart';
 import 'package:mobile_ultra/ui_models/various/message.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class FilterBtmSheet extends StatefulWidget {
   final FilterBtmSheetArg filterBtmSheetArg;

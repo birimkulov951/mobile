@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/domain/favorite/favorite.dart';
 import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/model/payment/pay_params.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/screens/base/mwwm/favorite/favorite_model.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/templates/add_new_template_page.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/templates/pay_by_template_page.dart';
@@ -102,7 +102,7 @@ mixin FavoriteWidgetModelMixin<W extends ElementaryWidget<IWidgetModel>,
               merchant: merchant,
               title: favoriteTemplateName(favorite),
               paymentType: PaymentType.PAY_BY_TEMPLATE,
-              account: PaynetId(
+              account: PynetId(
                 account: favorite.merchantData?.account,
                 payBill: favorite.merchantData?.params,
               ),

@@ -1,17 +1,17 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/ui_models/rows/account_row_item.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _maxAmountCount = 5;
 
 class MyAccountsList extends StatelessWidget {
-  final List<PaynetId> accountsData;
+  final List<PynetId> accountsData;
   final VoidCallback onOpenMyAccountsScreen;
-  final Function(PaynetId) onSingleAccountOpen;
+  final Function(PynetId) onSingleAccountOpen;
 
   const MyAccountsList({
     required this.accountsData,

@@ -16,10 +16,10 @@ class PaymentCheckPresenter extends Http with HttpView {
   PaymentCheckPresenter(String path, {required this.view}) : super(path: path);
 
   factory PaymentCheckPresenter.check(PaymentCheckView view) =>
-      PaymentCheckPresenter('pms2/api/paynet/act2', view: view);
+      PaymentCheckPresenter('pms2/api/pynet/act2', view: view);
 
   factory PaymentCheckPresenter.checkPrepaid(PaymentCheckView view) =>
-      PaymentCheckPresenter('microservice/api/paynet/act2prepaid', view: view);
+      PaymentCheckPresenter('microservice/api/pynet/act2prepaid', view: view);
 
   void makeRequest(String data) => makePost(this,
       header: {Const.AUTHORIZATION: getAccessToken()}, data: data);

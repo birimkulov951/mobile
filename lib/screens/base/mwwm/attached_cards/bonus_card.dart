@@ -5,7 +5,7 @@ import 'package:mobile_ultra/utils/const.dart';
 import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/utils/url_launcher.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 import 'package:sprintf/sprintf.dart';
 import 'package:url_launcher/url_launcher.dart';
 

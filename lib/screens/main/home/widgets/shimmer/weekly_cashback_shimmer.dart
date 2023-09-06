@@ -3,7 +3,7 @@ import 'package:mobile_ultra/resource/decorations.dart';
 import 'package:mobile_ultra/resource/gradients.dart';
 import 'package:mobile_ultra/ui_models/shimmer.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _todayCashbackHeight = 12.0;
 const _todayCashbackWidth = 38.0;

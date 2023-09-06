@@ -6,7 +6,7 @@ import 'package:mobile_ultra/domain/transfer/template_entity.dart';
 import 'package:mobile_ultra/interactor/analytics/data/transfer_destination_type.dart';
 import 'package:mobile_ultra/net/card/model/card.dart';
 import 'package:mobile_ultra/utils/const.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 abstract class TransferWayEntity {
   TransferWayEntity();

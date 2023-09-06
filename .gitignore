@@ -43,4 +43,4 @@ lib/generated_plugin_registrant.dart
 **.freezed.dart
 .vscode
 .fvm
-paynet_uikit/example/pubspec.lock
+ui_kit/example/pubspec.lock

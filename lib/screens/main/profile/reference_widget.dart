@@ -53,8 +53,7 @@ class ReferenceWidget extends StatelessWidget {
         leadingColor: Colors.white,
         title: locale.getText('privacy_policy'),
         onTap: () async {
-          if (await canLaunch('https://map.paynet.uz'))
-            launch('https://map.paynet.uz');
+
           else {
             showDialog(
               context: context,
@@ -76,8 +75,7 @@ class ReferenceWidget extends StatelessWidget {
         leadingColor: Colors.white,
         title: locale.getText('terms_of_use'),
         onTap: () async {
-          if (await canLaunch('https://map.paynet.uz'))
-            launch('https://map.paynet.uz');
+
           else {
             showDialog(
               context: context,

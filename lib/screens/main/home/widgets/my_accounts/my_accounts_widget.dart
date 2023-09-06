@@ -1,6 +1,6 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/screens/main/home/widgets/my_accounts/widgets/my_accounts_empty_widget.dart';
 import 'package:mobile_ultra/screens/main/home/widgets/my_accounts/widgets/my_accounts_list.dart';
 import 'package:mobile_ultra/screens/main/home/widgets/my_accounts/widgets/my_accounts_shimmer.dart';
@@ -8,8 +8,8 @@ import 'package:mobile_ultra/screens/main/home/widgets/my_accounts/widgets/my_ac
 class MyAccountsWidget extends StatelessWidget {
   final VoidCallback onAccountAddTap;
   final VoidCallback onMyAccountTextTap;
-  final Function(PaynetId) onSingleAccountOpen;
-  final EntityStateNotifier<List<PaynetId>?> myAccountsList;
+  final Function(PynetId) onSingleAccountOpen;
+  final EntityStateNotifier<List<PynetId>?> myAccountsList;
 
   const MyAccountsWidget({
     required this.onAccountAddTap,
@@ -21,7 +21,7 @@ class MyAccountsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EntityStateNotifierBuilder<List<PaynetId>?>(
+    return EntityStateNotifierBuilder<List<PynetId>?>(
       listenableEntityState: myAccountsList,
       builder: (_, accountsData) {
         if (accountsData == null) {

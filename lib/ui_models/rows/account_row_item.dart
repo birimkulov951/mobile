@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/resource/text_styles.dart';
 import 'package:mobile_ultra/ui_models/item/item_container.dart';
 import 'package:mobile_ultra/ui_models/various/circle_image.dart';
 import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/widgets/balance_widget.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class AccountItem extends StatelessWidget {
-  final PaynetId account;
+  final PynetId account;
   final bool viewControls;
-  final ValueChanged<PaynetId>? onDeleteItem;
-  final ValueChanged<PaynetId>? onTap;
+  final ValueChanged<PynetId>? onDeleteItem;
+  final ValueChanged<PynetId>? onTap;
   final EdgeInsets padding;
   final EdgeInsets margin;
 

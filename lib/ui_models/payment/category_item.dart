@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/ui_models/various/shape_circle.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
 
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 class CategoryItem extends StatefulWidget {
   const CategoryItem({

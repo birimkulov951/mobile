@@ -10,7 +10,7 @@ import 'package:mobile_ultra/data/storages/tables/t_field_values.dart';
 import 'package:mobile_ultra/data/storages/tables/t_fields.dart';
 import 'package:mobile_ultra/data/storages/tables/t_merchants.dart';
 import 'package:mobile_ultra/data/storages/tables/t_news.dart';
-import 'package:mobile_ultra/data/storages/tables/t_paynet_id.dart';
+import 'package:mobile_ultra/data/storages/tables/t_pynet_id.dart';
 import 'package:mobile_ultra/data/storages/tables/t_reminder.dart';
 import 'package:mobile_ultra/domain/cards/card_balance_entity.dart';
 import 'package:mobile_ultra/domain/cards/card_beans_entity.dart';
@@ -27,7 +27,7 @@ import 'package:mobile_ultra/net/card/model/card.dart';
 import 'package:mobile_ultra/net/card/model/card_been.dart';
 import 'package:mobile_ultra/net/card/model/main_data.dart';
 import 'package:mobile_ultra/net/payment/model/bill.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/net/payment/model/reminder.dart';
 import 'package:mobile_ultra/ui_models/various/fpi_widget.dart';
 import 'package:mobile_ultra/utils/const.dart';
@@ -47,7 +47,7 @@ class MUDatabase {
           await db.execute(TMerchants.SQL);
           await db.execute(TFields.SQL);
           await db.execute(TFieldValues.SQL);
-          await db.execute(TPaynetId.SQL);
+          await db.execute(TPynetId.SQL);
           await db.execute(TFastPayment.SQL);
           await db.execute(TCards.SQL);
           await db.execute(TFavorites.SQL);
@@ -258,22 +258,22 @@ class MUDatabase {
   }
 
   /// Сторит лицевые счета
-  Future setMyAccounts(List<PaynetId> accountList) async {
+  Future setMyAccounts(List<PynetId> accountList) async {
     await database?.transaction((transaction) async {
       final batch = transaction.batch();
 
       accountList.forEach((item) {
-        batch.insert(TPaynetId.NAME, {
-          TPaynetId.ID: item.id,
-          TPaynetId.UPDATE_TIME: item.updateTime,
-          TPaynetId.ACCOUNT: item.account,
-          TPaynetId.COMMENT: item.comment,
-          TPaynetId.LAST_BALANCE: item.lastBalance,
-          TPaynetId.BALANCE_TYPE: item.balanceType,
-          TPaynetId.ORDER: item.order,
-          TPaynetId.MERCHANT_ID: item.merchantId,
-          TPaynetId.MERCHANT_NAME: item.merchantName,
-          TPaynetId.PAY_BILL: jsonEncode(item.payBill),
+        batch.insert(TPynetId.NAME, {
+          TPynetId.ID: item.id,
+          TPynetId.UPDATE_TIME: item.updateTime,
+          TPynetId.ACCOUNT: item.account,
+          TPynetId.COMMENT: item.comment,
+          TPynetId.LAST_BALANCE: item.lastBalance,
+          TPynetId.BALANCE_TYPE: item.balanceType,
+          TPynetId.ORDER: item.order,
+          TPynetId.MERCHANT_ID: item.merchantId,
+          TPynetId.MERCHANT_NAME: item.merchantName,
+          TPynetId.PAY_BILL: jsonEncode(item.payBill),
         });
       });
 
@@ -282,35 +282,35 @@ class MUDatabase {
   }
 
   /// Возвращает списо лицевых счетов
-  Future<List<PaynetId>> getMyAccounts() async {
+  Future<List<PynetId>> getMyAccounts() async {
     final List<Map<String, dynamic>> result =
-        (await database?.query(TPaynetId.NAME, orderBy: TPaynetId.ORDER) ?? []);
+        (await database?.query(TPynetId.NAME, orderBy: TPynetId.ORDER) ?? []);
 
     return List.generate(
       result.length,
-      (index) => PaynetId(
-        id: result[index][TPaynetId.ID],
-        updateTime: result[index][TPaynetId.UPDATE_TIME],
-        account: result[index][TPaynetId.ACCOUNT],
-        comment: result[index][TPaynetId.COMMENT],
-        lastBalance: result[index][TPaynetId.LAST_BALANCE].toDouble(),
-        balanceType: result[index][TPaynetId.BALANCE_TYPE],
-        order: result[index][TPaynetId.ORDER],
-        merchantId: result[index][TPaynetId.MERCHANT_ID],
-        merchantName: result[index][TPaynetId.MERCHANT_NAME],
-        payBill: jsonDecode(result[index][TPaynetId.PAY_BILL]),
+      (index) => PynetId(
+        id: result[index][TPynetId.ID],
+        updateTime: result[index][TPynetId.UPDATE_TIME],
+        account: result[index][TPynetId.ACCOUNT],
+        comment: result[index][TPynetId.COMMENT],
+        lastBalance: result[index][TPynetId.LAST_BALANCE].toDouble(),
+        balanceType: result[index][TPynetId.BALANCE_TYPE],
+        order: result[index][TPynetId.ORDER],
+        merchantId: result[index][TPynetId.MERCHANT_ID],
+        merchantName: result[index][TPynetId.MERCHANT_NAME],
+        payBill: jsonDecode(result[index][TPynetId.PAY_BILL]),
       ),
     );
   }
 
   Future deleteAccount(int merchantId, String account) async =>
       await database?.delete(
-        TPaynetId.NAME,
-        where: '${TPaynetId.MERCHANT_ID} = ? AND ${TPaynetId.ACCOUNT} = ?',
+        TPynetId.NAME,
+        where: '${TPynetId.MERCHANT_ID} = ? AND ${TPynetId.ACCOUNT} = ?',
         whereArgs: [merchantId, account],
       );
 
-  Future clearMyAccounts() async => await database?.delete(TPaynetId.NAME);
+  Future clearMyAccounts() async => await database?.delete(TPynetId.NAME);
 
   Future saveReminders(List<Reminder> reminders) async {
     await database?.transaction((transaction) async {

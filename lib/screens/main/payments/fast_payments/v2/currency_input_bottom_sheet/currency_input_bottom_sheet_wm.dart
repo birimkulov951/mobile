@@ -15,7 +15,7 @@ import 'package:mobile_ultra/utils/analytics_utils.dart';
 import 'package:mobile_ultra/utils/inject.dart';
 import 'package:mobile_ultra/utils/input_formatter/amount_formatter.dart';
 
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 import 'package:sprintf/sprintf.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/currency_input_bottom_sheet.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/currency_input_bottom_sheet_model.dart';

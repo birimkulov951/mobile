@@ -8,8 +8,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobile_ultra/domain/payment/merchant_entity.dart';
 import 'package:mobile_ultra/main.dart' show accountList, db, locale, pref;
 import 'package:mobile_ultra/model/payment/pay_params.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
-import 'package:mobile_ultra/net/payment/paynetid_presenter.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
+import 'package:mobile_ultra/net/payment/pynetid_presenter.dart';
 import 'package:mobile_ultra/repositories/merchant_repository.dart';
 import 'package:mobile_ultra/resource/dimensions.dart';
 import 'package:mobile_ultra/screens/base/base_accounts_state.dart';
@@ -244,7 +244,7 @@ class _AccountsPageState extends BaseAccountsState<AccountsPage> {
     });
 
     if (item.id != null) {
-      PaynetIdPresenter.dragAndDrop(
+      PynetIdPresenter.dragAndDrop(
         params: ['${item.id}', '${pos + 1}'],
         onError: onFail,
       );
@@ -281,7 +281,7 @@ class _AccountsPageState extends BaseAccountsState<AccountsPage> {
     }
   }
 
-  Future<void> _onTap(PaynetId account) async {
+  Future<void> _onTap(PynetId account) async {
     final merchant = account.merchantId == null
         ? null
         : widget.merchantRepository.findMerchant(account.merchantId!);

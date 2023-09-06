@@ -9,7 +9,7 @@ import 'package:mobile_ultra/screens/main/transfer/transfer_by_phone/transfer_ba
 import 'package:mobile_ultra/ui_models/app_bar/custom_app_bar.dart';
 import 'package:mobile_ultra/ui_models/item/item_container.dart';
 import 'package:mobile_ultra/ui_models/shimmer.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 const _shimmerItemLength = 12;
 

@@ -6,7 +6,7 @@ class PaymentQr {
   String? fiscalSign;
   String? qrCodeUrl;
   num? totalAmount;
-  num? paynetComission;
+  num? pynetComission;
   num? providerComission;
   num? vat;
   String? paymentType;
@@ -19,7 +19,7 @@ class PaymentQr {
 
   @override
   String toString() {
-    return 'PaymentQr{tranId: $tranId, terminalId: $terminalId, checkId: $checkId, fiscalSign: $fiscalSign, qrCodeUrl: $qrCodeUrl, totalAmount: $totalAmount, paynetComission: $paynetComission, providerComission: $providerComission, vat: $vat, paymentType: $paymentType, cash: $cash, card: $card, remains: $remains, address: $address}';
+    return 'PaymentQr{tranId: $tranId, terminalId: $terminalId, checkId: $checkId, fiscalSign: $fiscalSign, qrCodeUrl: $qrCodeUrl, totalAmount: $totalAmount, pynetComission: $pynetComission, providerComission: $providerComission, vat: $vat, paymentType: $paymentType, cash: $cash, card: $card, remains: $remains, address: $address}';
   }
 
   factory PaymentQr.fromJson(Map<String, dynamic> json) {

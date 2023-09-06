@@ -13,11 +13,11 @@ import 'package:mobile_ultra/net/transfer/model/p2p_pay.dart';
 
 extension CardsByPhoneNumberEntityExt on CardsByPhoneNumberResponse {
   CardsByPhoneNumberEntity toEntity() {
-    final List<BankCardEntity> paynetCards = [];
+    final List<BankCardEntity> pynetCards = [];
     final List<BankCardEntity> otherCards = [];
 
-    for (final card in data.paynet) {
-      paynetCards.add(
+    for (final card in data.pynet) {
+      pynetCards.add(
         BankCardEntity(
           id: card.id,
           cardType: card.cardType,
@@ -50,7 +50,7 @@ extension CardsByPhoneNumberEntityExt on CardsByPhoneNumberResponse {
 
     return CardsByPhoneNumberEntity(
       bankCardsData: BankCardsEntity(
-        paynetCards: paynetCards,
+        pynetCards: pynetCards,
         otherCards: otherCards,
       ),
       success: success,

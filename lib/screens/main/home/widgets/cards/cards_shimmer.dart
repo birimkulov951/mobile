@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/resource/decorations.dart';
 import 'package:mobile_ultra/ui_models/shimmer.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uiKit;
+import 'package:ui_kit/ui_kit.dart' as uiKit;
 
 const _shimmerLength = 2;
 const _cardHeight = 40.0;

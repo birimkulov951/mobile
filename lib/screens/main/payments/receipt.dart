@@ -98,7 +98,7 @@ class ReceiptWidgetState extends BasePaymentResultState<ReceiptWidget> {
     column.children.add(
       ReceiptItem(
         label: "uzpaynet_comission",
-        value: mobileQrDto.paynetComission.toString(),
+        value: mobileQrDto.pynetComission.toString(),
         onCopied: onCopied,
       ),
     );
@@ -222,7 +222,7 @@ class ReceiptWidgetState extends BasePaymentResultState<ReceiptWidget> {
   void _toSaveRenderQR(
       Map<String, dynamic> toSave, final PaymentQr mobileQrDto) {
     toSave[locale.getText('uzpaynet_comission')] =
-        mobileQrDto.paynetComission.toString();
+        mobileQrDto.pynetComission.toString();
     toSave[locale.getText('with_nds')] = mobileQrDto.vat.toString();
     toSave[locale.getText('total_to_pay')] = mobileQrDto.totalAmount.toString();
     toSave[locale.getText('payment_type')] = mobileQrDto.paymentType;

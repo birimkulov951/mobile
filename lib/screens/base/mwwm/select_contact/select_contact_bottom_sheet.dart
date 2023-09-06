@@ -2,7 +2,7 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mobile_ultra/domain/phone_contact/phone_contact_entity.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 import 'package:mobile_ultra/screens/base/mwwm/select_contact/select_contact_wm.dart';
 

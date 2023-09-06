@@ -12,7 +12,7 @@ import 'package:sprintf/sprintf.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert';
 import 'package:mobile_ultra/utils/u.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 class CardPaymentDetail extends StatefulWidget {
   final bool hasShareIcon;
   final bool hasQr;
@@ -40,7 +40,7 @@ class _CardPaymentDetailState extends State<CardPaymentDetail> {
   void initState() {
     super.initState();
     try {
-      receipt = jsonDecode(widget.historyItem?.paynetReceipt ?? '{}');
+      receipt = jsonDecode(widget.historyItem?.pynetReceipt ?? '{}');
     } on Object catch (_) {
       receipt = {};
     }

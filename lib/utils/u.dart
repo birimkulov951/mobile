@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:mobile_ultra/domain/favorite/favorite.dart';
 import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/net/card/model/card.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/net/payment/model/reminder.dart';
 import 'package:mobile_ultra/screens/main/payments/auto_payments/autopayment.dart';
 import 'package:mobile_ultra/screens/main/payments/unique_payment_forms/book_fund/book_fund_add_to_widget.dart';
@@ -306,7 +306,7 @@ Future<String?> get directoryPath async => Platform.isAndroid
     ? (await getExternalStorageDirectory())?.path
     : (await getLibraryDirectory()).path;
 
-String getBalanceTypeDesc(PaynetId? account) {
+String getBalanceTypeDesc(PynetId? account) {
   if (account == null) {
     return '';
   }
@@ -330,7 +330,7 @@ String getBalanceTypeDesc(PaynetId? account) {
   }
 }
 
-String getBalanceDesc(PaynetId? account) {
+String getBalanceDesc(PynetId? account) {
   if (account == null) {
     return '';
   }

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/main.dart' show locale;
 import 'package:mobile_ultra/model/payment/pay_params.dart';
 import 'package:mobile_ultra/net/payment/model/bill.dart';
-import 'package:mobile_ultra/net/payment/paynetid_presenter.dart';
+import 'package:mobile_ultra/net/payment/pynetid_presenter.dart';
 import 'package:mobile_ultra/resource/text_styles.dart';
 import 'package:mobile_ultra/screens/main/payments/v2/base_payment_page_state.dart';
 import 'package:mobile_ultra/ui_models/app_bar/custom_app_bar.dart';
@@ -158,7 +158,7 @@ class _EditAccountWidgetState extends BasePaymentPageState<EditAccountWidget> {
     if (payBill?.id == null || account?.id == null) {
       return;
     }
-    PaynetIdPresenter.editAccount(
+    PynetIdPresenter.editAccount(
       billId: payBill!.id!,
       id: account!.id!,
       comment: '',
@@ -193,7 +193,7 @@ class _EditAccountWidgetState extends BasePaymentPageState<EditAccountWidget> {
     if (result) {
       onLoad();
 
-      PaynetIdPresenter.delete(
+      PynetIdPresenter.delete(
         params: ['${account?.merchantId}', '${account?.account}'],
         onDeleteSuccess: () {
           onLoad(load: false);

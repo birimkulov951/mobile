@@ -14,7 +14,7 @@ import 'package:mobile_ultra/utils/widget_ids.dart';
 import 'package:mobile_ultra/widgets/change_notifier_builder.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 const _appBarTitleScale = 1.6;
 const _bottomNavigationViewPadding = 24;

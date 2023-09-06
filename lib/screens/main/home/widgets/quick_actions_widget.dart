@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobile_ultra/resource/assets.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class QuickActionsWidget extends StatelessWidget {
   const QuickActionsWidget({

@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:app.paynet.uz</string>
+		<string>applinks:app.example.uz</string>
 	</array>
 </dict>
 </plist>

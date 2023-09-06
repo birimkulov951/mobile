@@ -4,7 +4,7 @@ import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/net/card/model/card.dart';
 import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class TransferPaymentCardItem extends StatelessWidget {
   final bool isSelfTransfer;

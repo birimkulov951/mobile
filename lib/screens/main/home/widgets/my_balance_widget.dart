@@ -6,7 +6,7 @@ import 'package:mobile_ultra/screens/qa/qa_page.dart';
 import 'package:mobile_ultra/utils/app_config.dart';
 import 'package:mobile_ultra/widgets/balance_widget.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class MyBalanceWidget extends StatelessWidget {
   const MyBalanceWidget({

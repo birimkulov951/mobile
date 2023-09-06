@@ -26,11 +26,11 @@ class Transaction {
   final String? terminalId;
   final String? tranType;
   final dynamic billId;
-  final dynamic paynetCode;
-  final dynamic paynetMessage;
+  final dynamic pynetCode;
+  final dynamic pynetMessage;
   final String? fio;
   final double? commission;
-  String? paynetReceipt;
+  String? pynetReceipt;
   final Map<String, dynamic>? paymentReceipt;
   final AdditionInfo? additionInfo;
   bool? isTrack;
@@ -62,11 +62,11 @@ class Transaction {
     this.terminalId,
     this.tranType,
     this.billId,
-    this.paynetCode,
-    this.paynetMessage,
+    this.pynetCode,
+    this.pynetMessage,
     this.fio,
     this.commission,
-    this.paynetReceipt,
+    this.pynetReceipt,
     this.paymentReceipt,
     this.additionInfo,
     this.isTrack = false,
@@ -100,11 +100,11 @@ class Transaction {
       terminalId: terminalId,
       tranType: tranType,
       billId: billId,
-      paynetCode: paynetCode,
-      paynetMessage: paynetMessage,
+      pynetCode: pynetCode,
+      pynetMessage: pynetMessage,
       fio: fio,
       commission: commission,
-      paynetReceipt: paynetReceipt,
+      pynetReceipt: pynetReceipt,
       paymentReceipt: paymentReceipt,
       additionInfo: additionInfo,
       isTrack: isTrack,
@@ -139,11 +139,11 @@ class Transaction {
         terminalId: json['terminalId'] ?? '',
         tranType: json['tranType'],
         billId: json['billId'],
-        paynetCode: json['paynetCode'],
-        paynetMessage: json['paynetMessage'],
+        pynetCode: json['pynetCode'],
+        pynetMessage: json['pynetMessage'],
         fio: json['fio'] ?? '',
         commission: (json['commission'] ?? 0) / 100,
-        paynetReceipt: json['paynetReceipt'],
+        pynetReceipt: json['pynetReceipt'],
         paymentReceipt: json['paymentReceipt'],
         additionInfo: json['additionalInfo'] == null
             ? AdditionInfo()

@@ -6,7 +6,7 @@ import 'package:mobile_ultra/data/storages/home_storage.dart';
 import 'package:mobile_ultra/domain/home/monthly_cashback_entity.dart';
 import 'package:mobile_ultra/domain/home/weekly_cashback_entity.dart';
 import 'package:mobile_ultra/main.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/repositories/home_repository.dart';
 
 @Singleton(as: HomeRepository)
@@ -20,7 +20,7 @@ class HomeRepositoryImpl implements HomeRepository {
   final HomeStorage _homeStorage;
 
   @override
-  Future<List<PaynetId>> getMyAccounts() async {
+  Future<List<PynetId>> getMyAccounts() async {
     return await _homeApi.getMyAccounts();
   }
 

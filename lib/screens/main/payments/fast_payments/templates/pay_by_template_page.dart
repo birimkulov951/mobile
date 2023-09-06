@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobile_ultra/main.dart' show favoriteList, locale, reminderList;
 import 'package:mobile_ultra/model/payment/pay_params.dart';
 import 'package:mobile_ultra/model/payment/merchant_fields.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/resource/assets.dart';
 import 'package:mobile_ultra/ui_models/app_bar/custom_app_bar.dart';
 import 'package:mobile_ultra/utils/PaymentType.dart';
@@ -121,7 +121,7 @@ class _PayByTemplatePageState extends BasePaymentPageState<PayByTemplatePage> {
 
           title = result.last.name;
 
-          account = PaynetId(
+          account = PynetId(
               account: paymentParams?.templateType == TemplateType.Favorite
                   ? result.last.bill.account
                   : result.last.account,

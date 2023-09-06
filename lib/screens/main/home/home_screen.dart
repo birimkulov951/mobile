@@ -9,7 +9,7 @@ import 'package:mobile_ultra/screens/main/home/widgets/my_balance_widget.dart';
 import 'package:mobile_ultra/screens/main/home/widgets/news_widget.dart';
 import 'package:mobile_ultra/screens/main/home/widgets/quick_actions_widget.dart';
 import 'package:mobile_ultra/ui_models/buttons/button.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class HomeScreen extends ElementaryWidget<IHomeScreenWidgetModel> {
   const HomeScreen({

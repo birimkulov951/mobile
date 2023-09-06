@@ -16,7 +16,7 @@ import 'package:mobile_ultra/ui_models/various/message.dart';
 import 'package:mobile_ultra/utils/PaymentType.dart';
 import 'package:mobile_ultra/utils/inject.dart';
 import 'package:mobile_ultra/utils/locale_helper.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 import 'package:rxdart/rxdart.dart';
 
 abstract class IPaymentsScreenWidgetModel extends IWidgetModel

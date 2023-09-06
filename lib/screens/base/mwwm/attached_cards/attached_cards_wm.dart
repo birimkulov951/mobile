@@ -12,7 +12,7 @@ import 'package:mobile_ultra/screens/card/v3/edit_card/route/edit_card_screen_ro
 import 'package:mobile_ultra/ui_models/modal_sheet/view_modal_sheet.dart';
 import 'package:mobile_ultra/ui_models/modal_sheet/view_modal_sheet_dialog.dart';
 import 'package:mobile_ultra/utils/const.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 mixin IAttachedCardsWidgetModelMixin on IWidgetModel {
   Future<AttachedCard?> addNewCard();

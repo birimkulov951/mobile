@@ -1,5 +1,5 @@
 name: mobile_ultra
-description: A new paynet app
+description: A new example app
 publish_to: none
 
 version: 7.0.7+202302132
@@ -66,7 +66,9 @@ dependencies:
   local_auth: ^1.1.11
   encrypt: ^5.0.1
   flutter_html_to_pdf: ^0.7.0
-  open_filex: ^4.3.2
+  open_filex:
+    git:
+      url: https://github.com/abdurakhmon97/changed_open_filex.git
   flutter_local_notifications: ^9.7.0
   rxdart: ^0.27.5
   share: ^2.0.4
@@ -92,9 +94,11 @@ dependencies:
   flutter_multi_formatter: ^2.9.0
   appmetrica_plugin: ^1.1.0
   appmetrica_push: ^1.0.0
-  paynet_uikit:
-    path: paynet_uikit/
-  fast_contacts: ^3.0.3
+  ui_kit:
+    path: ui_kit/
+  fast_contacts:
+    git:
+      url: https://github.com/dadagov125/fast_contacts
   package_info_plus: ^1.4.2
 
 dev_dependencies:

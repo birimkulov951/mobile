@@ -28,9 +28,9 @@ abstract class DBModule {
   Future<Box> createHive() async {
     Hive.registerAdapter(CategoryHiveObjectAdapter());
     Hive.registerAdapter(MerchantHiveObjectAdapter());
-    await Hive.openBox<CategoryHiveObject>('paynet_payment_categories');
-    await Hive.openBox<MerchantHiveObject>('paynet_merchants');
-    return Hive.openBox('paynet_storage');
+    await Hive.openBox<CategoryHiveObject>('pynet_payment_categories');
+    await Hive.openBox<MerchantHiveObject>('pynet_merchants');
+    return Hive.openBox('pynet_storage');
   }
 }
 

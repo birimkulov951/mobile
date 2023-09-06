@@ -1,5 +1,5 @@
-# app_identifier("[[GS.Uzpaynet]]") # The bundle identifier of your app
-# apple_id("[[developer@paynet.uz]]") # Your Apple Developer Portal username
+# app_identifier("") # The bundle identifier of your app
+# apple_id("") # Your Apple Developer Portal username
 
 
 # For more information about the Appfile, see:

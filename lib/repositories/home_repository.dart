@@ -1,9 +1,9 @@
 import 'package:mobile_ultra/domain/home/monthly_cashback_entity.dart';
 import 'package:mobile_ultra/domain/home/weekly_cashback_entity.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 
 abstract class HomeRepository {
-  Future<List<PaynetId>> getMyAccounts();
+  Future<List<PynetId>> getMyAccounts();
 
   bool isBiometricsEnablingAsked();
 

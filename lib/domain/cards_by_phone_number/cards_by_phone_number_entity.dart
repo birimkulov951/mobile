@@ -20,19 +20,19 @@ class CardsByPhoneNumberEntity with EquatableMixin {
 
 class BankCardsEntity with EquatableMixin {
   const BankCardsEntity({
-    required this.paynetCards,
+    required this.pynetCards,
     required this.otherCards,
   });
 
-  final List<BankCardEntity> paynetCards;
+  final List<BankCardEntity> pynetCards;
   final List<BankCardEntity> otherCards;
 
   @override
-  List<Object> get props => [paynetCards, otherCards];
+  List<Object> get props => [pynetCards, otherCards];
 
   @override
   String toString() {
-    return 'BankTypeEntity{paynet: $paynetCards, other: $otherCards}';
+    return 'BankTypeEntity{paynet: $pynetCards, other: $otherCards}';
   }
 }
 

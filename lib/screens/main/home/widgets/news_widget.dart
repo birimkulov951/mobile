@@ -1,7 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_ultra/domain/notification/notification_entity.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class NewsWidget extends StatelessWidget {
   const NewsWidget({

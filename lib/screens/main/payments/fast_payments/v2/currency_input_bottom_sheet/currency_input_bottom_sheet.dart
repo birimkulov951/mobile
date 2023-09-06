@@ -9,8 +9,8 @@ import 'package:mobile_ultra/ui_models/buttons/button.dart';
 import 'package:mobile_ultra/ui_models/card/v2/card_item.dart';
 import 'package:mobile_ultra/widgets/card_select.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart';
 
 class CurrencyInputBottomSheet
     extends ElementaryWidget<ICurrencyInputBottomSheetWidgetModel> {

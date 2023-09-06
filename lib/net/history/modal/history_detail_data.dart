@@ -1,7 +1,7 @@
 /// status : 0
 /// statusText : "Проведен успешно"
 /// comission : "0"
-/// details : {"agent_name":{"label":"Агент","value":"PAYNET (PAYNET Mobile)"},"agent_inn":{"label":"ИНН","value":"205916449"},"provider_name":{"label":"Оператор","value":"Моб. Ташкент гор. ПЭС"},"service_name":{"label":"Услуга","value":"Оплата (mobile)"},"time":{"label":"Время","value":"29.06.2022 12:18:36"},"transaction_id":{"label":"Номер чека","value":"11258182568"},"purchased_amount":{"label":"Оплачено","value":"500"},"soato":{"label":"Соато","value":"26280"},"customer_code":{"label":"Лицевой счёт","value":"0494168"},"consumer":{"label":"Потребитель","value":"01000098392"},"amount":{"label":"Сумма","value":"500"},"PayBank_Date":{"label":"Дата","value":"29.06.2022 11:17:30"},"PAYER_ADDRESS":{"label":"Адрес потребителя","value":"***************"},"PAYER_NAME":{"label":"ФИО потребителя","value":"***************"},"PAYER_AREA":{"label":"Отапливаемая площадь кв.м","value":"56,52"},"PAYER_MANS":{"label":"Кол-о проживающих лиц всего","value":"**"},"PAYER_COUNTER_DATE":{"label":"Дата снятия показаний прибора учета","value":"20.05.2022"},"PAYER_COUNTER":{"label":"Суммарные показания учтенные во взаиморасчетах","value":"492"},"PAYER_COUNTER_TERM":{"label":"Дата окончания срока госповерки счётчика","value":null},"PAYEE_TARIFFS_OVS":{"label":"Отопление","value":"142,00"},"PAYEE_TARIFFS_GVS_2":{"label":"Тариф по ГВ","value":"5242,00"},"PayCard":{"label":"Карта","value":"626272******1557"},"Payment_Code":{"label":"Номер транзакции UZPAYNET","value":"11257954548"},"PayBank_Code":{"label":"Номер транзакции ЕОПЦ","value":"015107867461"},"PayCode":{"label":"Номер транзакции Поставщика","value":"e855a2bb9a7f4b958bf2c957af980966"},"Payment":{"label":"Сумма платежа","value":"500"},"pay_amount":{"label":"Сумма платежа проводимого оператору","value":"500"},"terminal_id":{"label":"Номер терминала","value":"4138984"},"clientid":{"label":"Номер телефона","value":"953339038"}}
+/// details : {"agent_name":{"label":"Агент","value":"PYNET (PYNET Mobile)"},"agent_inn":{"label":"ИНН","value":"205916449"},"provider_name":{"label":"Оператор","value":"Моб. Ташкент гор. ПЭС"},"service_name":{"label":"Услуга","value":"Оплата (mobile)"},"time":{"label":"Время","value":"29.06.2022 12:18:36"},"transaction_id":{"label":"Номер чека","value":"11258182568"},"purchased_amount":{"label":"Оплачено","value":"500"},"soato":{"label":"Соато","value":"26280"},"customer_code":{"label":"Лицевой счёт","value":"0494168"},"consumer":{"label":"Потребитель","value":"01000098392"},"amount":{"label":"Сумма","value":"500"},"PayBank_Date":{"label":"Дата","value":"29.06.2022 11:17:30"},"PAYER_ADDRESS":{"label":"Адрес потребителя","value":"***************"},"PAYER_NAME":{"label":"ФИО потребителя","value":"***************"},"PAYER_AREA":{"label":"Отапливаемая площадь кв.м","value":"56,52"},"PAYER_MANS":{"label":"Кол-о проживающих лиц всего","value":"**"},"PAYER_COUNTER_DATE":{"label":"Дата снятия показаний прибора учета","value":"20.05.2022"},"PAYER_COUNTER":{"label":"Суммарные показания учтенные во взаиморасчетах","value":"492"},"PAYER_COUNTER_TERM":{"label":"Дата окончания срока госповерки счётчика","value":null},"PAYEE_TARIFFS_OVS":{"label":"Отопление","value":"142,00"},"PAYEE_TARIFFS_GVS_2":{"label":"Тариф по ГВ","value":"5242,00"},"PayCard":{"label":"Карта","value":"626272******1557"},"Payment_Code":{"label":"Номер транзакции UZPYNET","value":"11257954548"},"PayBank_Code":{"label":"Номер транзакции ЕОПЦ","value":"015107867461"},"PayCode":{"label":"Номер транзакции Поставщика","value":"e855a2bb9a7f4b958bf2c957af980966"},"Payment":{"label":"Сумма платежа","value":"500"},"pay_amount":{"label":"Сумма платежа проводимого оператору","value":"500"},"terminal_id":{"label":"Номер терминала","value":"4138984"},"clientid":{"label":"Номер телефона","value":"953339038"}}
 /// success : true
 
 class HistoryDetailData {
@@ -72,7 +72,7 @@ class HistoryDetailData {
   }
 }
 
-/// agent_name : {"label":"Агент","value":"PAYNET (PAYNET Mobile)"}
+/// agent_name : {"label":"Агент","value":"PYNET (PYNET Mobile)"}
 /// agent_inn : {"label":"ИНН","value":"205916449"}
 /// provider_name : {"label":"Оператор","value":"Моб. Ташкент гор. ПЭС"}
 /// service_name : {"label":"Услуга","value":"Оплата (mobile)"}
@@ -94,7 +94,7 @@ class HistoryDetailData {
 /// PAYEE_TARIFFS_OVS : {"label":"Отопление","value":"142,00"}
 /// PAYEE_TARIFFS_GVS_2 : {"label":"Тариф по ГВ","value":"5242,00"}
 /// PayCard : {"label":"Карта","value":"626272******1557"}
-/// Payment_Code : {"label":"Номер транзакции UZPAYNET","value":"11257954548"}
+/// Payment_Code : {"label":"Номер транзакции UZPYNET","value":"11257954548"}
 /// PayBank_Code : {"label":"Номер транзакции ЕОПЦ","value":"015107867461"}
 /// PayCode : {"label":"Номер транзакции Поставщика","value":"e855a2bb9a7f4b958bf2c957af980966"}
 /// Payment : {"label":"Сумма платежа","value":"500"}
@@ -733,7 +733,7 @@ class PayBankCode {
   }
 }
 
-/// label : "Номер транзакции UZPAYNET"
+/// label : "Номер транзакции UZPYNET"
 /// value : "11257954548"
 
 class PaymentCode {
@@ -1636,7 +1636,7 @@ class AgentInn {
 }
 
 /// label : "Агент"
-/// value : "PAYNET (PAYNET Mobile)"
+/// value : "PYNET (PYNET Mobile)"
 
 class AgentName {
   AgentName({

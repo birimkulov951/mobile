@@ -14,7 +14,7 @@ import 'package:mobile_ultra/model/payment/pay_params.dart';
 import 'package:mobile_ultra/net/card/model/card.dart';
 import 'package:mobile_ultra/net/payment/get_view_presenter.dart';
 import 'package:mobile_ultra/net/payment/model/bill.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/net/payment/payment_check_presenter.dart';
 import 'package:mobile_ultra/resource/assets.dart';
 import 'package:mobile_ultra/resource/text_styles.dart';
@@ -55,7 +55,7 @@ abstract class BasePaymentPageState<T extends StatefulWidget>
     with PaymentCheckView, GetViewPresenterView, WidgetsBindingObserver {
   final Preference preference = inject<Preference>();
   PaymentParams? paymentParams;
-  PaynetId? account;
+  PynetId? account;
   DynamicField? templateNameField;
 
   bool isFavorite = false;

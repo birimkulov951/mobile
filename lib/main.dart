@@ -17,7 +17,7 @@ import 'package:mobile_ultra/interactor/analytics/analytics_interactor.dart';
 import 'package:mobile_ultra/interactor/push_notification/push_notifications_interactor.dart';
 import 'package:mobile_ultra/net/card/model/bonus_per_month.dart';
 import 'package:mobile_ultra/net/card/model/main_data.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/net/payment/model/reminder.dart';
 import 'package:mobile_ultra/responsive_main_wrapper.dart';
 import 'package:mobile_ultra/screens/auth/route/auth_pin_screen_route.dart';
@@ -87,7 +87,7 @@ bool requestedFavorites = false;
 double screenHeight = 0;
 double statusBarHeight = 0;
 
-List<PaynetId> accountList = [];
+List<PynetId> accountList = [];
 List<Reminder> reminderList = [];
 List<FavoriteEntity> favoriteList = [];
 List<String> suggestionList = [];

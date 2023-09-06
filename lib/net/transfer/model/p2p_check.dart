@@ -27,7 +27,7 @@ class P2PCheck {
   String? comment;
   final dynamic statusCode;
   final dynamic dateEnd;
-  final bool? hasPaynetCard;
+  final bool? hasPynetCard;
   final bool? hasOtherCard;
   final String? receiverBankName;
   final P2PCheckType p2pCheckType;
@@ -59,7 +59,7 @@ class P2PCheck {
     this.comment,
     this.statusCode,
     this.dateEnd,
-    this.hasPaynetCard,
+    this.hasPynetCard,
     this.hasOtherCard,
     this.receiverBankName,
     required this.p2pCheckType,
@@ -91,7 +91,7 @@ class P2PCheck {
         comment: json['comment'],
         statusCode: json['statusCode'],
         dateEnd: json['date_end'],
-        hasPaynetCard: json['hasPaynetCard'],
+        hasPynetCard: json['hasPynetCard'],
         hasOtherCard: json['hasOtherCard'],
         receiverBankName: json['receiverBankName'],
         p2pCheckType: json['type'].toString().toP2PCheckType(),
@@ -126,7 +126,7 @@ class P2PCheck {
         ' comment = $comment\n'
         ' statusCode = $statusCode\n'
         ' dateEnd = $dateEnd\n'
-        ' hasPaynetCard = $hasPaynetCard\n'
+        ' hasPynetCard = $hasPynetCard\n'
         ' hasOtherCard = $hasOtherCard\n'
         ' receiverBankName = $receiverBankName\n'
         ' p2pType = $p2pCheckType\n'

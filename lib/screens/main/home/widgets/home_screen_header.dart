@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class HomeScreenHeader extends StatelessWidget {
   const HomeScreenHeader({

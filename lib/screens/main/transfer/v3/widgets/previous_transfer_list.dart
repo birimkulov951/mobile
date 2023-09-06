@@ -5,7 +5,7 @@ import 'package:mobile_ultra/domain/transfer/previous_transfer_entity.dart';
 import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/screens/main/transfer/v3/widgets/previous_transfer_shimmer.dart';
 import 'package:mobile_ultra/utils/u.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 const _shimmerListLength = 4;
 

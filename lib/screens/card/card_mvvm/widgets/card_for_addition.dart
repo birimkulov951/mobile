@@ -5,7 +5,7 @@ import 'package:mobile_ultra/resource/assets.dart';
 import 'package:mobile_ultra/screens/card/card_mvvm/widgets/card_input.dart';
 import 'package:mobile_ultra/screens/card/card_mvvm/widgets/expiration_input.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _cardContainerHeight = 196.0;
 

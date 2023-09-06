@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/main.dart' show db, favoriteList, locale;
 import 'package:mobile_ultra/model/payment/pay_params.dart';
 import 'package:mobile_ultra/net/payment/favorite_presenter.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/repositories/merchant_repository.dart';
 import 'package:mobile_ultra/resource/dimensions.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/templates/pay_by_template_page.dart';
@@ -146,7 +146,7 @@ class TemplateFavoritesWidgetState extends State<TemplateFavoritesWidget> {
             merchant: merchant,
             title: favoriteTemplateName(favorite),
             paymentType: PaymentType.PAY_BY_TEMPLATE,
-            account: PaynetId(
+            account: PynetId(
               account: favorite.merchantData?.account,
               payBill: favorite.merchantData?.params,
             ),

@@ -9,7 +9,7 @@ import 'package:mobile_ultra/ui_models/buttons/button.dart';
 import 'package:mobile_ultra/ui_models/item/item_container.dart';
 import 'package:mobile_ultra/ui_models/various/loading.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class PhoneNumberLoginScreen
     extends ElementaryWidget<IPhoneNumberLoginScreenWidgetModel> {

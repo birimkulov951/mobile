@@ -24,11 +24,11 @@ class Payment {
   final String? account;
   final int? billId;
   final String? merchantHash;
-  final int? paynetCode;
-  final String? paynetMessage;
+  final int? pynetCode;
+  final String? pynetMessage;
   final int? transactionId;
   final String? tranTime;
-  final String? paynetReceipt;
+  final String? pynetReceipt;
   final AdditionInfo? additionInfo;
   final PaymentQr? mobileQrDto;
   final String? humoPaymentRef;
@@ -67,11 +67,11 @@ class Payment {
     this.account,
     this.billId,
     this.merchantHash,
-    this.paynetCode,
-    this.paynetMessage,
+    this.pynetCode,
+    this.pynetMessage,
     this.transactionId,
     this.tranTime,
-    this.paynetReceipt,
+    this.pynetReceipt,
     this.additionInfo,
     this.mobileQrDto,
     this.humoPaymentRef,
@@ -111,11 +111,11 @@ class Payment {
         account: json['account'],
         billId: json['billId'],
         merchantHash: json['merchantHash'],
-        paynetCode: json['paynetCode'],
-        paynetMessage: json['paynetMessage'],
+        pynetCode: json['pynetCode'],
+        pynetMessage: json['pynetMessage'],
         transactionId: json['transactionId'],
         tranTime: json['tranTime'],
-        paynetReceipt: json['paynetReceipt'],
+        pynetReceipt: json['pynetReceipt'],
         additionInfo: json['additionalInfo'] == null
             ? AdditionInfo()
             : AdditionInfo.fromJson(json['additionalInfo']),
@@ -142,12 +142,12 @@ class Payment {
 
   String get additionMessage {
     try {
-      if (paynetReceipt == null) {
+      if (pynetReceipt == null) {
         throw Exception();
       }
 
       final Map<String, dynamic> _details =
-          jsonDecode(paynetReceipt!)['details'];
+          jsonDecode(pynetReceipt!)['details'];
       return _details.containsKey('response_text')
           ? _details['response_text']['value']
           : '';
@@ -190,9 +190,9 @@ class Payment {
         'refNum: $refNum, merchantId: $merchantId, terminalId: $terminalId, '
         'currency: $currency, resp: $resp, status: $status, login: $login, '
         'card1: $card1, merchantName: $merchantName, account: $account, '
-        'billId: $billId, merchantHash: $merchantHash, paynetCode: $paynetCode,'
-        ' paynetMessage: $paynetMessage, transactionId: $transactionId, '
-        'tranTime: $tranTime, paynetReceipt: $paynetReceipt, additionInfo: '
+        'billId: $billId, merchantHash: $merchantHash, pynetCode: $pynetCode,'
+        ' pynetMessage: $pynetMessage, transactionId: $transactionId, '
+        'tranTime: $tranTime, pynetReceipt: $pynetReceipt, additionInfo: '
         '$additionInfo, mobileQrDto: $mobileQrDto, date12: $date12, field48: '
         '$field48, field91: $field91, cardId: $cardId, pan2: $pan2, message:'
         ' $message, paymentReceipt: $paymentReceipt, commission: $commission}';

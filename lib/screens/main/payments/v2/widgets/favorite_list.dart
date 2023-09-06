@@ -6,7 +6,7 @@ import 'package:mobile_ultra/ui_models/various/circle_image.dart';
 import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
 import 'package:mobile_ultra/widgets/quick_actions_shimmer.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 class FavoriteList extends StatelessWidget {
   const FavoriteList({

@@ -8,7 +8,7 @@ import 'package:mobile_ultra/utils/const.dart';
 import 'package:mobile_ultra/utils/locale_helper.dart';
 import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _maxCardsShow = 5;
 

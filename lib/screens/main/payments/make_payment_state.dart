@@ -7,11 +7,11 @@ import 'package:mobile_ultra/main.dart' show locale, db, appTheme, pref;
 import 'package:mobile_ultra/model/payment/merchant_fields.dart';
 import 'package:mobile_ultra/net/card/main_presenter.dart';
 import 'package:mobile_ultra/net/card/model/card.dart';
-import 'package:mobile_ultra/net/payment/attach_paynet_id_presenter.dart';
+import 'package:mobile_ultra/net/payment/attach_pynet_id_presenter.dart';
 import 'package:mobile_ultra/net/payment/get_view_presenter.dart';
 import 'package:mobile_ultra/net/payment/model/bill.dart';
 import 'package:mobile_ultra/net/payment/model/payment.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/net/payment/payment_check_presenter.dart';
 import 'package:mobile_ultra/net/payment/payment_presenter.dart';
 import 'package:mobile_ultra/net/request_error.dart';
@@ -45,7 +45,7 @@ abstract class MakePaymentState<T extends StatefulWidget>
         WidgetsBindingObserver {
   String? title;
   MerchantEntity? merchant;
-  PaynetId? account;
+  PynetId? account;
   String comment = '';
 
   bool isFavorite = false,
@@ -790,7 +790,7 @@ abstract class MakePaymentState<T extends StatefulWidget>
       return;
     }
 
-    AttachPaynetIdPresenter.attach(
+    AttachPynetIdPresenter.attach(
       payBill!.id!,
       comment: comment,
       onAttachEvent: (error) {

@@ -10,7 +10,7 @@ import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/model/payment/pay_params.dart';
 import 'package:mobile_ultra/net/card/model/card.dart';
 import 'package:mobile_ultra/net/card/model/main_data.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/screens/base/mwwm/attached_cards/attached_cards_wm.dart';
 import 'package:mobile_ultra/screens/base/mwwm/system/system_wm.dart';
 import 'package:mobile_ultra/screens/card/v3/all_cards/all_cards_screen.dart';
@@ -31,7 +31,7 @@ import 'package:mobile_ultra/ui_models/various/message.dart';
 import 'package:mobile_ultra/utils/PaymentType.dart';
 import 'package:mobile_ultra/utils/inject.dart';
 import 'package:mobile_ultra/widgets/feedback_bottom_sheets/feedback_bottom_sheets.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const _paynetCallCenterTelegram = 'https://t.me/PaynetCallCenter_bot';
@@ -40,7 +40,7 @@ const _requisiteMerchantId = 6710;
 abstract class IHomeScreenWidgetModel extends IWidgetModel
     with ISystemWidgetModelMixin, IAttachedCardsWidgetModelMixin {
   abstract final EntityStateNotifier<MainData> allCardsData;
-  abstract final EntityStateNotifier<List<PaynetId>?> myAccountsList;
+  abstract final EntityStateNotifier<List<PynetId>?> myAccountsList;
   abstract final ValueNotifier<bool> isBalanceHidden;
   abstract final EntityStateNotifier<MonthlyCashbackEntity> monthlyCashback;
   abstract final EntityStateNotifier<WeeklyCashbackEntity> weeklyCashback;
@@ -48,7 +48,7 @@ abstract class IHomeScreenWidgetModel extends IWidgetModel
 
   Future<void> addNewAccount();
 
-  Future<void> openChosenAccountDetailsScreen(PaynetId account);
+  Future<void> openChosenAccountDetailsScreen(PynetId account);
 
   void goToMyAccountsScreen();
 
@@ -112,8 +112,8 @@ class HomeScreenWidgetModel extends WidgetModel<HomeScreen, HomeScreenModel>
       EntityStateNotifier<MainData>();
 
   @override
-  late final EntityStateNotifier<List<PaynetId>?> myAccountsList =
-      EntityStateNotifier<List<PaynetId>>();
+  late final EntityStateNotifier<List<PynetId>?> myAccountsList =
+      EntityStateNotifier<List<PynetId>>();
 
   @override
   late final ValueNotifier<bool> isBalanceHidden =
@@ -248,7 +248,7 @@ class HomeScreenWidgetModel extends WidgetModel<HomeScreen, HomeScreenModel>
   }
 
   @override
-  Future<void> openChosenAccountDetailsScreen(PaynetId account) async {
+  Future<void> openChosenAccountDetailsScreen(PynetId account) async {
     //TODO (Abdurahmon): shift database operations to data layer
     final merchant = account.merchantId == null
         ? null

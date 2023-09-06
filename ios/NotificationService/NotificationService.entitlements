@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.paynet.uz.PAYNET</string>
+		<string>group.example.uz.EXAMPLE</string>
 	</array>
 </dict>
 </plist>

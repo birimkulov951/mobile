@@ -23,7 +23,7 @@ import 'package:mobile_ultra/ui_models/various/message.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
 import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _appBarTitleScale = 1.6;
 

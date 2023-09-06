@@ -7,7 +7,7 @@ import 'package:mobile_ultra/resource/assets.dart';
 import 'package:mobile_ultra/screens/main/history/arguments/history_down_container_arg.dart';
 import 'package:mobile_ultra/screens/main/history/widgets/history_button.dart';
 import 'package:mobile_ultra/utils/u.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class DownContainerHeader extends StatefulWidget {
   final HistoryDownContainerArg historyDownContainerArg;

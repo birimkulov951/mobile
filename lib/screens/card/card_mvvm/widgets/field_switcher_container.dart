@@ -4,7 +4,7 @@ import 'package:mobile_ultra/domain/cards/field_switcher.dart';
 import 'package:mobile_ultra/resource/assets.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _fieldSwitcherHeight = 48.0;
 

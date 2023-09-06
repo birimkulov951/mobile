@@ -43,7 +43,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
   void initState() {
     super.initState();
     try {
-      receipt = jsonDecode(widget.payment?.paynetReceipt ?? '{}');
+      receipt = jsonDecode(widget.payment?.pynetReceipt ?? '{}');
     } on Object catch (_) {
       receipt = {};
     }

@@ -6,7 +6,7 @@ import 'package:mobile_ultra/ui_models/buttons/button.dart';
 import 'package:mobile_ultra/ui_models/item/item_container.dart';
 import 'package:mobile_ultra/ui_models/various/title1.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uiKit;
+import 'package:ui_kit/ui_kit.dart' as uiKit;
 
 Future<bool?> viewModalSheetDialog({
   required BuildContext context,

@@ -5,7 +5,7 @@ import 'package:mobile_ultra/domain/notification/notification_entity.dart';
 import 'package:mobile_ultra/resource/dimensions.dart';
 import 'package:mobile_ultra/resource/text_styles.dart';
 import 'package:mobile_ultra/ui_models/modal_bottom_sheet/custom_modal_bottom_sheet.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class NotificationBottomSheet extends StatelessWidget {
   const NotificationBottomSheet({

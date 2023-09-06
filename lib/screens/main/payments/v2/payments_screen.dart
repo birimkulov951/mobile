@@ -11,7 +11,7 @@ import 'package:mobile_ultra/utils/color_scheme.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
 import 'package:mobile_ultra/widgets/cell_phone_payment/cell_phone_payment.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 const _appBarTitleScale = 1.6;
 

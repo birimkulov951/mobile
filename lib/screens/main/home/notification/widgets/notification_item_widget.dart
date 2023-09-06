@@ -4,7 +4,7 @@ import 'package:mobile_ultra/domain/notification/notification_entity.dart';
 import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
 import 'package:mobile_ultra/utils/u.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class NotificationItemWidget extends StatelessWidget {
   const NotificationItemWidget({

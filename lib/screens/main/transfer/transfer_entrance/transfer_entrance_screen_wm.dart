@@ -27,7 +27,7 @@ import 'package:mobile_ultra/screens/main/transfer/v3/transfer_screen/route/argu
 import 'package:mobile_ultra/screens/main/transfer/v3/transfer_screen/route/transfer_screen_route.dart'
     as v3;
 import 'package:mobile_ultra/utils/inject.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _abroadToKazMerchantId = 15590;
 
@@ -365,7 +365,7 @@ class TransferEntranceScreenWidgetModel
 
     if (screenContent is PhoneFoundTransferScreenContent) {
       final allCards = [
-        ...screenContent.foundBanks.paynetCards,
+        ...screenContent.foundBanks.pynetCards,
         ...screenContent.foundBanks.otherCards
       ];
 

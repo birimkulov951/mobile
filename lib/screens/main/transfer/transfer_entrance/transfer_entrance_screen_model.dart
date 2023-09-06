@@ -9,7 +9,7 @@ import 'package:mobile_ultra/repositories/transfer_repository.dart';
 import 'package:mobile_ultra/screens/base/mwwm/remote_config/remote_config_model.dart';
 import 'package:mobile_ultra/screens/base/mwwm/system/system_model.dart';
 import 'package:mobile_ultra/utils/const.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class TransferEntranceScreenModel extends ElementaryModel
     with SystemModelMixin, RemoteConfigModelMixin {

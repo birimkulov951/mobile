@@ -21,11 +21,11 @@ class CardsByPhoneNumberResponse {
 @JsonSerializable()
 class BankType {
   const BankType({
-    required this.paynet,
+    required this.pynet,
     required this.other,
   });
 
-  final List<BankCard> paynet;
+  final List<BankCard> pynet;
   final List<BankCard> other;
 
   factory BankType.fromJson(Map<String, dynamic> json) =>

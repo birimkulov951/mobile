@@ -21,7 +21,7 @@ abstract class PaymentApi {
   @POST('microservice/api/humo/trans/v3/payment')
   Future<Payment> payFromHumoV3(@Body() PaymentRequest request);
 
-  @POST('pms2/api/paynet/act2')
+  @POST('pms2/api/pynet/act2')
   Future<CreateBillResponse> createBill(@Body() CreateBillRequest request);
 
   @GET('pms2/api/favorites/mine')

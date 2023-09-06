@@ -351,7 +351,7 @@ abstract class BasePaymentResultState<T extends StatefulWidget>
       printList.add(jsonEncode({
         'type': 'data',
         'info':
-            '${locale.getText("uzpaynet_comission")}: ${mobileQrDto.paynetComission.toString()}',
+            '${locale.getText("uzpaynet_comission")}: ${mobileQrDto.pynetComission.toString()}',
         'size': 28,
         'align': 'LEFT',
       }));

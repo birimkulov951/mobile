@@ -6,7 +6,7 @@ import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_inp
 import 'package:mobile_ultra/ui_models/toast/toast.dart';
 import 'package:mobile_ultra/widgets/cell_phone_payment/cell_phone_payment.dart';
 import 'package:mobile_ultra/widgets/cell_phone_payment/cell_phone_payment_model.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 abstract class ICellPhonePaymentWidgetModel extends IWidgetModel {
   abstract final GlobalKey<PhoneInputState> phoneInputKey;

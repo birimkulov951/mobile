@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:mobile_ultra/resource/decorations.dart';
 import 'package:mobile_ultra/resource/gradients.dart';
 import 'package:mobile_ultra/ui_models/shimmer.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 class QuickActionsShimmer extends StatelessWidget {
   const QuickActionsShimmer({

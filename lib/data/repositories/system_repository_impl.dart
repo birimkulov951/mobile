@@ -8,10 +8,10 @@ import 'package:mobile_ultra/domain/phone_contact/phone_contact_entity.dart';
 import 'package:mobile_ultra/domain/phone_contact/phone_contact_filter.dart';
 import 'package:mobile_ultra/repositories/system_repository.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-const String _methodChannel = "app.paynet.uz.mc";
+const String _methodChannel = "app.example.uz.mc";
 const String _methodChannelNfcInvokeWith = "with_nfc";
 const String _methodChannelNfcArgumentUseNfc = "use_nfc";
 

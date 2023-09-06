@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/domain/phone_contact/phone_contact_entity.dart';
 import 'package:mobile_ultra/screens/base/mwwm/system/system_wm.dart';
 import 'package:mobile_ultra/utils/inject.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 import 'package:mobile_ultra/screens/base/mwwm/select_contact/select_contact_bottom_sheet.dart';
 import 'package:mobile_ultra/screens/base/mwwm/select_contact/select_contact_model.dart';

@@ -7,7 +7,7 @@ import 'package:mobile_ultra/screens/main/history/widgets/history_button.dart';
 import 'package:mobile_ultra/utils/calendar/table_calendar.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class PeriodItem extends StatefulWidget {
   final PeriodItemArg periodItemArg;

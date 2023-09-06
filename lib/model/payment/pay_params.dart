@@ -1,7 +1,7 @@
 import 'package:mobile_ultra/domain/favorite/favorite.dart';
 import 'package:mobile_ultra/domain/payment/merchant_entity.dart';
 import 'package:mobile_ultra/interactor/analytics/data/payment_opened_data.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/net/payment/model/reminder.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/templates/templates_page.dart';
 import 'package:mobile_ultra/utils/PaymentType.dart';
@@ -23,7 +23,7 @@ class PaymentParams {
   });
   final String title;
   final MerchantEntity? merchant;
-  final PaynetId? account;
+  final PynetId? account;
   final FavoriteEntity? favorite;
   final Reminder? remider;
   final PaymentType paymentType;
@@ -37,7 +37,7 @@ class PaymentParams {
   PaymentParams copy({
     String? title,
     MerchantEntity? merchant,
-    PaynetId? account,
+    PynetId? account,
     FavoriteEntity? favorite,
     Reminder? remider,
     PaymentType? paymentType,

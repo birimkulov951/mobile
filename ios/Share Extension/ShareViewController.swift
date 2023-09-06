@@ -11,7 +11,7 @@ import Social
 import MobileCoreServices
 
 class ShareViewController: SLComposeServiceViewController {
-    let hostAppBundleIdentifier = "paynet.uz.PAYNET"
+    let hostAppBundleIdentifier = "example.uz.EXAMPLE"
     let urlContentType = kUTTypeURL as String
     let textContentType = kUTTypeText as String
     var sharedText: [String] = []

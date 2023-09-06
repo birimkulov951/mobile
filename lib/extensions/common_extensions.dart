@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/domain/payment/merchant_entity.dart';
 import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/model/payment/pay_params.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/screens/main/payments/unique_payment_forms/book_fund/book_fund_widget.dart';
 import 'package:mobile_ultra/screens/main/payments/unique_payment_forms/gnk/gnk.dart';
 import 'package:mobile_ultra/screens/main/payments/unique_payment_forms/mib_bpi/mib_bpi.dart';
@@ -52,7 +52,7 @@ extension CommonNavigationFunc on State {
     MerchantEntity? merchant,
     required PaymentType type,
     String title = '',
-    PaynetId? account,
+    PynetId? account,
     String? qrQuery,
     bool autoInfoRequest = false,
   }) async {
@@ -90,7 +90,7 @@ extension CommonNavigationFunc2 on StatelessWidget {
     required MerchantEntity? merchant,
     required PaymentType type,
     String title = '',
-    PaynetId? account,
+    PynetId? account,
     String? qrQuery,
     bool autoInfoRequest = false,
   }) async {

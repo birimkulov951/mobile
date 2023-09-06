@@ -11,7 +11,7 @@ import 'package:mobile_ultra/ui_models/buttons/button.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
 import 'package:mobile_ultra/utils/locale_helper.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 final OnBoardingScreenArguments mainOnboardingArguments =

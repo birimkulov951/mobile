@@ -21,7 +21,7 @@ import 'package:mobile_ultra/screens/card/card_mvvm/exceptions/card_not_found_or
 import 'package:mobile_ultra/screens/card/card_mvvm/widgets/card_input.dart';
 import 'package:mobile_ultra/utils/const.dart';
 import 'package:mobile_ultra/utils/inject.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _cardNumberLength = 19;
 const _cardExpirationLength = 5;

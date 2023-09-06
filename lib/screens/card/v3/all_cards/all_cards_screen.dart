@@ -9,7 +9,7 @@ import 'package:mobile_ultra/ui_models/buttons/button.dart';
 import 'package:mobile_ultra/ui_models/various/loading.dart';
 import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _bottomPadding = 84.0;
 

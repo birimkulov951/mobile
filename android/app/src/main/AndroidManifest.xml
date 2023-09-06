@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="uz.paynet.app">
+    package="uz.example.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
@@ -51,20 +51,20 @@
             android:value="2" />
 
         <meta-data
-            android:name="ymp_firebase_default_app_id"
-            android:value="1:346561398276:android:1cdcb445d60cc906" />
+            android:name=""
+            android:value="" />
         <meta-data
-            android:name="ymp_gcm_default_sender_id"
-            android:value="number:346561398276" />
+            android:name=""
+            android:value="" />
         <meta-data
-            android:name="ymp_firebase_default_api_key"
-            android:value="AIzaSyChE0jr6tYum6fwcXgLnxNQI0vp-priJac" />
+            android:name=""
+            android:value="" />
         <meta-data
             android:name="ymp_firebase_default_project_id"
-            android:value="uzpaynet-9637" />
+            android:value="" />
 
         <activity
-            android:name="uz.paynet.app.MainActivity"
+            android:name="uz.example.app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:exported="true"
             android:hardwareAccelerated="true"
@@ -103,7 +103,7 @@
 
                 <data android:scheme="http" />
                 <data android:scheme="https" />
-                <data android:host="app.paynet.uz" />
+                <data android:host="app.example.uz" />
             </intent-filter>
             <intent-filter>
                 <action android:name="FLUTTER_NOTIFICATION_CLICK" />

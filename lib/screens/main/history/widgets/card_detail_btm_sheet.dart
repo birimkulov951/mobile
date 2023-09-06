@@ -250,11 +250,11 @@ class _CardDetailBtmSheetState extends State<CardDetailBtmSheet>
 
     var htmlReceipt = utf8.decode(base64Decode(receipt)).replaceAll('�', '');
 
-    final paynetReceipt = transaction?.paynetReceipt;
+    final pynetReceipt = transaction?.pynetReceipt;
 
-    final Map<String, dynamic>? details = paynetReceipt == null
+    final Map<String, dynamic>? details = pynetReceipt == null
         ? null
-        : jsonDecode(transaction!.paynetReceipt!)?['details'];
+        : jsonDecode(transaction!.pynetReceipt!)?['details'];
 
     details?.forEach((key, value) {
       htmlReceipt = htmlReceipt.replaceAll('#$key#', value['value'] ?? '');
@@ -297,13 +297,13 @@ class _CardDetailBtmSheetState extends State<CardDetailBtmSheet>
     _populateMainDataToPdfReceipt(toSave: toSave);
     Map<String, dynamic> receipt = {};
     try {
-      receipt = jsonDecode(transaction?.paynetReceipt ?? '{}');
+      receipt = jsonDecode(transaction?.pynetReceipt ?? '{}');
     } on Object catch (_) {}
 
     if (receipt.isNotEmpty) {
-      final Map<String, dynamic> details = transaction?.paynetReceipt == null
+      final Map<String, dynamic> details = transaction?.pynetReceipt == null
           ? null
-          : jsonDecode(transaction!.paynetReceipt!)['details'];
+          : jsonDecode(transaction!.pynetReceipt!)['details'];
       details.remove('select');
       details.forEach((key, value) {
         toSave[value['label']] = value['value'] ?? '';
@@ -372,8 +372,8 @@ class _CardDetailBtmSheetState extends State<CardDetailBtmSheet>
 
   void toSaveRenderQR(
       Map<String, dynamic> toSave, final MobileQrDto mobileQrDto) {
-    toSave[locale.getText('uzpaynet_comission')] =
-        mobileQrDto.paynetComission.toString();
+    toSave[locale.getText('uzpynet_comission')] =
+        mobileQrDto.pynetComission.toString();
     toSave[locale.getText('with_nds')] = mobileQrDto.vat.toString();
     toSave[locale.getText('total_to_pay')] = mobileQrDto.totalAmount.toString();
     toSave[locale.getText('payment_type')] = mobileQrDto.paymentType;

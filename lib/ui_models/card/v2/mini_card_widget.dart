@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:mobile_ultra/net/card/model/card.dart';
 import 'package:mobile_ultra/utils/const.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class MiniCardWidget extends StatelessWidget {
   final AttachedCard? uCard;

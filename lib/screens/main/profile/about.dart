@@ -66,10 +66,10 @@ class AboutWidget extends StatelessWidget {
                     ),
                     onTap: () async {
                       final canLaunch =
-                          await UrlLauncher.canLaunchUrl(Const.paynetDomain);
+                          await UrlLauncher.canLaunchUrl(Const.pynetDomain);
                       if (canLaunch) {
                         await UrlLauncher.launchUrl(
-                          Const.paynetDomain,
+                          Const.pynetDomain,
                           mode: LaunchMode.externalApplication,
                         );
                       } else {

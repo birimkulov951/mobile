@@ -9,7 +9,7 @@ import 'package:mobile_ultra/ui_models/app_bar/custom_app_bar.dart';
 import 'package:mobile_ultra/ui_models/buttons/button.dart';
 import 'package:mobile_ultra/ui_models/various/loading.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class CardAdditionScreen
     extends ElementaryWidget<ICardAdditionScreenWidgetModel> {

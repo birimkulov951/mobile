@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_ultra/domain/payment/merchant_entity.dart';
 import 'package:mobile_ultra/main.dart' show appTheme, locale, pref;
-import 'package:mobile_ultra/net/payment/attach_paynet_id_presenter.dart';
+import 'package:mobile_ultra/net/payment/attach_pynet_id_presenter.dart';
 import 'package:mobile_ultra/net/payment/favorite_presenter.dart';
 import 'package:mobile_ultra/net/payment/model/bill.dart';
 import 'package:mobile_ultra/net/payment/model/payment.dart';
-import 'package:mobile_ultra/net/payment/paynetid_presenter.dart';
+import 'package:mobile_ultra/net/payment/pynetid_presenter.dart';
 import 'package:mobile_ultra/screens/base/base_inherited_theme.dart';
 import 'package:mobile_ultra/screens/main/payments/receipt.dart';
 import 'package:mobile_ultra/ui_models/buttons/button.dart';
@@ -314,7 +314,7 @@ class PaymentResultWidgetState extends BaseInheritedTheme<PaymentResultWidget> {
       onChangeFormState(showLoad: true);
 
       if (bill?.id != null) {
-        AttachPaynetIdPresenter.attach(
+        AttachPynetIdPresenter.attach(
           bill!.id!,
           comment: contentText ?? '',
           onAttachEvent: (error) {
@@ -323,7 +323,7 @@ class PaymentResultWidgetState extends BaseInheritedTheme<PaymentResultWidget> {
               return;
             }
 
-            PaynetIdPresenter.getList();
+            PynetIdPresenter.getList();
 
             onChangeFormState();
             onSuccess(locale.getText('added'));

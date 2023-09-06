@@ -7,7 +7,7 @@ import 'package:mobile_ultra/screens/main/home/widgets/shimmer/monthly_cashback_
 import 'package:mobile_ultra/screens/main/home/widgets/shimmer/weekly_cashback_shimmer.dart';
 import 'package:mobile_ultra/widgets/balance_widget.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 const _cashbackWidgetHeight = 120.0;
 

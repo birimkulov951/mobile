@@ -11,7 +11,7 @@ import 'package:mobile_ultra/ui_models/modal_sheet/view_modal_sheet_dialog.dart'
 import 'package:mobile_ultra/utils/const.dart';
 import 'package:mobile_ultra/utils/inject.dart';
 import 'package:mobile_ultra/utils/url_launcher.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 abstract class IEditCardScreenWidgetModel extends IWidgetModel

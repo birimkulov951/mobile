@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class CardInput extends OrdinaryInput {
   CardInput({

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/main.dart' show locale;
 import 'package:mobile_ultra/net/payment/favorite_presenter.dart';
 import 'package:mobile_ultra/net/payment/model/bill.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/net/payment/model/reminder.dart';
 import 'package:mobile_ultra/screens/main/payments/auto_payments/autopayment.dart';
 import 'package:mobile_ultra/screens/main/payments/make_payment_state.dart';
@@ -95,7 +95,7 @@ abstract class BaseAutopaymentForm<T extends StatefulWidget>
     }
 
     if (reminder != null) {
-      account = PaynetId(
+      account = PynetId(
         account: reminder?.account,
         payBill: reminder?.payBill,
       );

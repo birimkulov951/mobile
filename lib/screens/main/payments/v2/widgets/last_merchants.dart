@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/domain/payment/merchant_entity.dart';
 import 'package:mobile_ultra/main.dart';
 import 'package:mobile_ultra/screens/main/payments/v2/widgets/merchant_items.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 class LastMerchants extends StatelessWidget {
   const LastMerchants({

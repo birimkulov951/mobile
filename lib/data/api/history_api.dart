@@ -11,7 +11,7 @@ abstract class HistoryApi {
   @factoryMethod
   factory HistoryApi(Dio dio) = _HistoryApi;
 
-  @GET('microservice/api/trans/paynet/only')
+  @GET('microservice/api/trans/pynet/only')
   Future<List<HistoryResponse>> getTransactionsHistory(
     @Query('lang') String lang,
     @Query('limit') int limit,

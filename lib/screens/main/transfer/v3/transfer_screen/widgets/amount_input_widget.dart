@@ -5,7 +5,7 @@ import 'package:mobile_ultra/resource/text_styles.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
 import 'package:mobile_ultra/utils/u.dart';
-import 'package:paynet_uikit/paynet_uikit.dart';
+import 'package:ui_kit/ui_kit.dart';
 import 'package:sprintf/sprintf.dart';
 
 class AmountInputWidget extends StatelessWidget {

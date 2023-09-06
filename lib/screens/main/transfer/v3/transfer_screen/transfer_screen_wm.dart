@@ -17,7 +17,7 @@ import 'package:mobile_ultra/ui_models/various/message.dart';
 import 'package:mobile_ultra/utils/const.dart';
 import 'package:mobile_ultra/utils/inject.dart';
 import 'package:mobile_ultra/utils/input_formatter/amount_formatter.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 import 'package:sprintf/sprintf.dart';
 
 const _maxTransferAmount = 10000000;

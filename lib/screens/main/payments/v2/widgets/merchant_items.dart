@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_ultra/domain/payment/merchant_entity.dart';
 import 'package:mobile_ultra/ui_models/various/circle_image.dart';
 import 'package:mobile_ultra/utils/widget_ids.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 class MerchantItems extends StatelessWidget {
   const MerchantItems({

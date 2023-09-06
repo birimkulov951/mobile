@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uiKit;
+import 'package:ui_kit/ui_kit.dart' as uiKit;
 
 import 'package:mobile_ultra/resource/text_styles.dart';
 import 'package:mobile_ultra/utils/color_scheme.dart';

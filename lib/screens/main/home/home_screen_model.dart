@@ -6,7 +6,7 @@ import 'package:mobile_ultra/domain/home/monthly_cashback_entity.dart';
 import 'package:mobile_ultra/domain/home/weekly_cashback_entity.dart';
 import 'package:mobile_ultra/domain/notification/notification_entity.dart';
 import 'package:mobile_ultra/interactor/analytics/analytics_interactor.dart';
-import 'package:mobile_ultra/net/payment/model/paynetid.dart';
+import 'package:mobile_ultra/net/payment/model/pynetid.dart';
 import 'package:mobile_ultra/repositories/cards_repository.dart';
 import 'package:mobile_ultra/repositories/feedback_repository.dart';
 import 'package:mobile_ultra/repositories/home_repository.dart';
@@ -43,7 +43,7 @@ class HomeScreenModel extends ElementaryModel
   final MerchantRepository merchantRepository;
   final NotificationRepository _notificationRepository;
 
-  Future<List<PaynetId>?> fetchMyAccounts() async {
+  Future<List<PynetId>?> fetchMyAccounts() async {
     try {
       return await _homeRepository.getMyAccounts();
     } on Object catch (e) {

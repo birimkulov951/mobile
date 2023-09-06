@@ -54,8 +54,8 @@ const _excludedMerchantIds = [
 class Const {
   Const._();
 
-  static const String APP_NAME = "PAYNET";
-  static const String APP_NAME_DEV = "PAYNET_DEV";
+  static const String APP_NAME = "EXAMPLE";
+  static const String APP_NAME_DEV = "EXAMPLE_DEV";
 
   static const PUBLIC_OFFER =
       "";
@@ -63,9 +63,9 @@ class Const {
       "";
   static const BONUS_TERMS =
       "";
-  static const paynetMapDomain = "";
-  static const paynetDomain = "";
-  static const paynetCallCenter = "";
+  static const pynetMapDomain = "";
+  static const pynetDomain = "";
+  static const pynetCallCenter = "";
   static const TRACK_PAYMENTS_OFFER =
       "";
   static const infoBot = "";

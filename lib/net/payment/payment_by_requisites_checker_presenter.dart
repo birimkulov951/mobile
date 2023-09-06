@@ -7,7 +7,7 @@ class PaymentByRequisitesCheckerPresenter extends Http with HttpView {
   Function({String error, String result})? onGetResult;
 
   PaymentByRequisitesCheckerPresenter()
-      : super(path: 'microservice/api/paynet/rekvizit/check');
+      : super(path: 'microservice/api/pynet/rekvizit/check');
 
   void checkStatus({
     required String transactionId,

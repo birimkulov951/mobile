@@ -13,7 +13,7 @@ class NotificationService: UNNotificationServiceExtension {
         
         if bestAttemptContent != nil {
                     // Modify the notification content here...
-                    YMPYandexMetricaPush.setExtensionAppGroup("group.paynet.uz.PAYNET")
+                    YMPYandexMetricaPush.setExtensionAppGroup("group.example.uz.EXAMPLE")
                     YMPYandexMetricaPush.handleDidReceive(request)
                 }
                 

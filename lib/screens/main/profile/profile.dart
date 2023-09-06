@@ -29,7 +29,7 @@ import 'package:mobile_ultra/ui_models/various/message.dart';
 import 'package:mobile_ultra/ui_models/various/title1.dart';
 import 'package:mobile_ultra/ui_models/modal_sheet/view_modal_sheet_dialog.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 const _paynetMail = 'support@paynet.uz';
 const _paynetCallCenter = 'tel:+998712020707';

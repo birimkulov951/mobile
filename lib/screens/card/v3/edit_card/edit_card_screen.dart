@@ -10,7 +10,7 @@ import 'package:mobile_ultra/ui_models/buttons/button.dart';
 import 'package:mobile_ultra/ui_models/various/loading.dart';
 import 'package:mobile_ultra/utils/const.dart';
 import 'package:mobile_ultra/utils/u.dart';
-import 'package:paynet_uikit/paynet_uikit.dart' as uiKit;
+import 'package:ui_kit/ui_kit.dart' as uiKit;
 import 'package:sprintf/sprintf.dart';
 
 //todo Abdurahmon backend must give this

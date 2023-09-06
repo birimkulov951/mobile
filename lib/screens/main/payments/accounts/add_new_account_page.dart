@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:mobile_ultra/main.dart' show locale;
-import 'package:mobile_ultra/net/payment/paynetid_presenter.dart';
+import 'package:mobile_ultra/net/payment/pynetid_presenter.dart';
 import 'package:mobile_ultra/model/payment/pay_params.dart';
 import 'package:mobile_ultra/net/payment/model/bill.dart';
 import 'package:mobile_ultra/screens/main/payments/accounts/adding_account_result_page.dart';
@@ -120,7 +120,7 @@ class AddNewAccountPageState extends BasePaymentPageState<AddNewAccountPage> {
       return;
     }
 
-    PaynetIdPresenter.attachAccount(
+    PynetIdPresenter.attachAccount(
         billId: payBill!.id!,
         comment: '',
         onAttachEvent: () async {
