@@ -35,8 +35,8 @@ lib/generated_plugin_registrant.dart
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
-/android/app/src/main/gen/uz/paynet/mobile_ultra/Manifest.java
-/android/app/src/main/gen/uz/paynet/mobile_ultra/R.java
+/android/app/src/main/gen/uz/example/mobile_ultra/Manifest.java
+/android/app/src/main/gen/uz/example/mobile_ultra/R.java
 !/pubspec.lock
 **/di_container.config.dart
 **.g.dart

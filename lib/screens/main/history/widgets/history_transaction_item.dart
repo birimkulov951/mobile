@@ -212,7 +212,7 @@ class HistoryTransactionItem extends StatelessWidget {
       if (pan.contains(_paynetCardIdLeading)) {
         return merchantHash != null
             ? SvgPicture.asset(Assets.cashback)
-            : Image.asset(Assets.paynetCard);
+            : Image.asset(Assets.pynetCard);
       } else if (card1Length == 16) {
         return Padding(
           padding: EdgeInsets.all(10),

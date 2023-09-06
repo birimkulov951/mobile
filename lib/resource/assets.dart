@@ -88,7 +88,7 @@ class Assets {
   static const cardExpired = '$_graphicsRedesign/card_expired.svg';
   static const cardInvalid = '$_graphicsRedesign/card_invalid.svg';
   static const noShapeSettings = '$_graphicsRedesign/no_shape_settings.svg';
-  static const paynetLogoText = '$_graphicsRedesign/paynet_logo_text.svg';
+  static const pynetLogoText = '$_graphicsRedesign/pynet_logo_text.svg';
   static const icOperationsMobile =
       '$_graphicsRedesign/ic_operations_mobile.svg';
   static const icActionScan = '$_graphicsRedesign/ic_action_scan.svg';
@@ -103,7 +103,7 @@ class Assets {
   static const icRocket = '$_graphicsRedesign/ic_operation_rocket.svg';
   static const chevronRightRounded =
       '$_graphicsRedesign/chevron_right_rounded.svg';
-  static const paynetLogo = '$_graphicsRedesign/paynet_logo.svg';
+  static const pynetLogo = '$_graphicsRedesign/pynet_logo.svg';
   static const info = '$_graphics/info.svg';
   static const icFilter = '$_graphicsRedesign/ic_filter.svg';
   static const icNavigationClose = '$_graphicsRedesign/ic_navigation_close.svg';
@@ -113,7 +113,7 @@ class Assets {
   static const iconProductStatusWar =
       '$_graphicsRedesign/icon_product_status_war.svg';
   static const swapCardsIcon = '$_graphicsRedesign/swap_cards_icon.svg';
-  static const paynetCard = '$_image/paynet_card.png';
+  static const pynetCard = '$_image/pynet_card.png';
   static const faceId = '$_graphicsRedesign/faceId.svg';
   static const fingerPrint = '$_graphicsRedesign/fingerprint.svg';
   static const stars = '$_graphicsRedesign/stars.svg';

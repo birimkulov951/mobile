@@ -36,7 +36,7 @@ class TransferTemplate extends ElementaryWidget<ITransferTemplateWidgetModel> {
             preferredSize: const Size.fromHeight(kToolbarHeight),
             child: StateNotifierBuilder<String>(
               listenableState: wm.titleState,
-              builder: (context, title) => PaynetAppBar(
+              builder: (context, title) => PynetAppBar(
                 title ?? '',
                 actions: [
                   const SizedBox(width: 12),

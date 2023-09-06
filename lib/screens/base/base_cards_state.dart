@@ -21,7 +21,7 @@ abstract class BaseCardsState<T extends StatefulWidget> extends State<T> {
 
   void onUpdateCommonBalance();
 
-  void getPaynetUCards() => setState(() {
+  void getPynetUCards() => setState(() {
         final isEmpty = homeData?.cards.isEmpty ?? false;
         isLoading = homeData == null || isEmpty;
 
@@ -34,7 +34,7 @@ abstract class BaseCardsState<T extends StatefulWidget> extends State<T> {
                 retryCounter++;
               }
             },
-            onSussecc: onGetPaynetUCards);
+            onSussecc: onGetPynetUCards);
       });
 
   void updateBalances() => MainPresenter.cardsBalances(
@@ -47,7 +47,7 @@ abstract class BaseCardsState<T extends StatefulWidget> extends State<T> {
         onError: onError,
       );
 
-  void onGetPaynetUCards() => setState(() {
+  void onGetPynetUCards() => setState(() {
         retryCounter = 0;
         isLoading = false;
         getBonusPerMonth();
@@ -55,7 +55,7 @@ abstract class BaseCardsState<T extends StatefulWidget> extends State<T> {
 
   void onGetCardsBalances(bool updateCardsHash) {
     if (updateCardsHash) {
-      getPaynetUCards();
+      getPynetUCards();
     } else {
       getBonusPerMonth();
       if (mounted) {

@@ -32,7 +32,7 @@ class BankCardsEntity with EquatableMixin {
 
   @override
   String toString() {
-    return 'BankTypeEntity{paynet: $pynetCards, other: $otherCards}';
+    return 'BankTypeEntity{pynet: $pynetCards, other: $otherCards}';
   }
 }
 

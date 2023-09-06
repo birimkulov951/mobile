@@ -59,7 +59,7 @@ analyzer:
     - lib/**.freezed.dart
     - lib/**.config.dart
     - packages/
-    - paynet_uikit/
+    - ui_kit/
     - plugin/
 linter:
   rules:

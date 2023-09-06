@@ -7,7 +7,7 @@ import androidx.annotation.NonNull
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
-import uz.paynet.app.ui.activities.SelectionActivity
+import uz.example.app.ui.activities.SelectionActivity
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -37,7 +37,7 @@ class MainActivity : FlutterFragmentActivity(), MethodChannel.MethodCallHandler,
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         GeneratedPluginRegistrant.registerWith(flutterEngine)
 
-        channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "app.paynet.uz.mc")
+        channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "app.example.uz.mc")
         channel.setMethodCallHandler(this)
     }
 

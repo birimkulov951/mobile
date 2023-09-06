@@ -77,7 +77,7 @@ class BookFundWidgetState extends BasePaymentPageState<BookFundWidget> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               paymentParams?.title ?? '',
             ),
             body: SingleChildScrollView(

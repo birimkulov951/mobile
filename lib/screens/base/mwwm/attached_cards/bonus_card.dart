@@ -39,7 +39,7 @@ class BonusCard extends StatelessWidget {
                         balance: sprintf(locale.getText('sum_with_amount'),
                             [formatAmount(bonusCard.balance)]),
                         color: ColorUtils.colorSelect[bonusCard.color!]!,
-                        logo: Logo.paynet,
+                        logo: Logo.pynet,
                         maskedPan: formatPhoneNumber(bonusCard.phone!),
                       ),
                     ),

@@ -84,7 +84,7 @@ class TransferConfirmationScreenState
     return Container(
       color: appTheme.backgroundColor,
       child: Scaffold(
-          appBar: PaynetAppBar('payment_confirm'),
+          appBar: PynetAppBar('payment_confirm'),
           body: Stack(
             children: [
               SingleChildScrollView(

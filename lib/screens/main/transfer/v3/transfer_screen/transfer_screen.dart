@@ -22,7 +22,7 @@ class TransferScreen extends ElementaryWidget<ITransferScreenWidgetModel> {
   @override
   Widget build(ITransferScreenWidgetModel wm) {
     return Scaffold(
-      appBar: PaynetAppBar(wm.title),
+      appBar: PynetAppBar(wm.title),
       body: StateNotifierBuilder(
           listenableState: wm.isLoadingState,
           builder: (_, __) {

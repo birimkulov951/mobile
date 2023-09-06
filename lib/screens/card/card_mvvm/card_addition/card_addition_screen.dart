@@ -29,7 +29,7 @@ class CardAdditionScreen
           children: [
             Scaffold(
               backgroundColor: BackgroundColors.Default,
-              appBar: PaynetAppBar(
+              appBar: PynetAppBar(
                 'card_addition',
               ),
               body: CustomScrollView(

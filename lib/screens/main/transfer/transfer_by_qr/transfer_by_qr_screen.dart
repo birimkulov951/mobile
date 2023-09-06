@@ -25,7 +25,7 @@ class TransferByQRScreen
 
   @override
   Widget build(ITransferByQrScreenWidgetModel wm) => Scaffold(
-        appBar: PaynetAppBar(
+        appBar: PynetAppBar(
           'qr_pay_helper',
         ),
         body: Stack(

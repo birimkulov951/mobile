@@ -5,17 +5,17 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class ChosenPaymentCardStorage {
-  final Box _paynetLocalStorage;
+  final Box _pynetLocalStorage;
 
-  const ChosenPaymentCardStorage(this._paynetLocalStorage);
+  const ChosenPaymentCardStorage(this._pynetLocalStorage);
 
   Future<void> saveLastPickedCardId({required int? pickedCardId}) async {
     log('picked card id is $pickedCardId');
-    await _paynetLocalStorage.put('card_id', pickedCardId);
+    await _pynetLocalStorage.put('card_id', pickedCardId);
   }
 
   Future<int?> getLastPickedCardId() async {
-    final cardId = await _paynetLocalStorage.get('card_id');
+    final cardId = await _pynetLocalStorage.get('card_id');
     log('getting card id is $cardId');
     return cardId;
   }

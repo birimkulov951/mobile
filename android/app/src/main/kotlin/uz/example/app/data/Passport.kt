@@ -3,9 +3,9 @@ package uz.example.app.data
 import android.graphics.Bitmap
 import android.os.Parcel
 import android.os.Parcelable
-import uz.paynet.app.data.AdditionalDocumentDetails
-import uz.paynet.app.data.AdditionalPersonDetails
-import uz.paynet.app.data.PersonDetails
+import uz.example.app.data.AdditionalDocumentDetails
+import uz.example.app.data.AdditionalPersonDetails
+import uz.example.app.data.PersonDetails
 import jmrtd.FeatureStatus
 import jmrtd.VerificationStatus
 import org.jmrtd.lds.SODFile

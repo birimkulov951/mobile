@@ -56,7 +56,7 @@ class MIBBPIWidgetState extends BasePaymentPageState<MIBBPIWidget> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               paymentParams?.title ?? '',
             ),
             body: scrolledForm,

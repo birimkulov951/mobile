@@ -25,7 +25,7 @@ class FastPayCategoriesScreen
   @override
   Widget build(IFastPayCategoriesScreenWidgetModel wm) {
     return Scaffold(
-      appBar: PaynetAppBar(
+      appBar: PynetAppBar(
         locale.getText('select_category'),
         centerTitle: false,
       ),

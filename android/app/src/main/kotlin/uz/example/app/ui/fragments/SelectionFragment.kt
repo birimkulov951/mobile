@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import uz.paynet.app.R
+import uz.example.app.R
 import io.reactivex.disposables.CompositeDisposable
 import java.security.Security
 

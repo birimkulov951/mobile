@@ -46,7 +46,7 @@ class _PinCodeWidgetState extends BasePinState<PinCodeWidget> {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 80),
-              child: SvgPicture.asset('assets/graphics/paynet.svg'),
+              child: SvgPicture.asset('assets/graphics/pynet.svg'),
             ),
             const Spacer(),
             Title1(

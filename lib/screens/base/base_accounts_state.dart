@@ -27,11 +27,11 @@ class BaseAccountsState<T extends StatefulWidget>
   }
 
   void onGetAccounts() => PynetIdPresenter.getList(
-        onGetList: onGetPaynetIdList,
+        onGetList: onGetPynetIdList,
         onError: onFail,
       );
 
-  Future<void> onDeleteAccount(PynetId paynetId) async {
+  Future<void> onDeleteAccount(PynetId pynetId) async {
     var result = await viewModalSheetDialog(
           context: context,
           title: locale.getText('confirm_delete_account'),
@@ -46,7 +46,7 @@ class BaseAccountsState<T extends StatefulWidget>
         false;
 
     if (result) {
-      forDelete = paynetId;
+      forDelete = pynetId;
 
       PynetIdPresenter.delete(
         params: ['${forDelete?.merchantId}', '${forDelete?.account}'],
@@ -63,7 +63,7 @@ class BaseAccountsState<T extends StatefulWidget>
 
   void onFail(String error, {errorBody}) => forDelete = null;
 
-  void onGetPaynetIdList({String? error}) {
+  void onGetPynetIdList({String? error}) {
     if (mounted) {
       setState(() {
         loading = false;
@@ -78,9 +78,9 @@ class BaseAccountsState<T extends StatefulWidget>
   }
 
   void onDeleteSuccess() => setState(() {
-        accountList.removeWhere((paynetId) =>
-            paynetId.merchantId == forDelete?.merchantId &&
-            paynetId.account == forDelete?.account);
+        accountList.removeWhere((pynetId) =>
+            pynetId.merchantId == forDelete?.merchantId &&
+            pynetId.account == forDelete?.account);
 
         if (forDelete?.merchantId != null && forDelete?.account != null) {
           db?.deleteAccount(

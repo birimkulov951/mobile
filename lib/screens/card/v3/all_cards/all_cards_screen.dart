@@ -185,7 +185,7 @@ class _BonusCard extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeadlineV2(title: locale.getText('paynet_bonus_card')),
+        HeadlineV2(title: locale.getText('pynet_bonus_card')),
         const SizedBox(height: 12),
         GestureDetector(
           onTap: () => onEditCard(bonusCard),

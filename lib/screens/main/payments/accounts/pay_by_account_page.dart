@@ -61,7 +61,7 @@ class _PayByAccountPageState extends BasePaymentPageState<PayByAccountPage> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               title,
               returningData: _accountChangedOrRemoved,
               actions: [

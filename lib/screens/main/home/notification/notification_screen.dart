@@ -24,7 +24,7 @@ class NotificationScreen
       color: ColorNode.Green,
       onRefresh: () => wm.getNotifications(),
       child: Scaffold(
-        appBar: PaynetAppBar('notification'),
+        appBar: PynetAppBar('notification'),
         body: EntityStateNotifierBuilder<List<NotificationEntity>>(
           listenableEntityState: wm.notificationList,
           loadingBuilder: (context, data) {

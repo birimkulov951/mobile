@@ -58,7 +58,7 @@ class _PayByTemplatePageState extends BasePaymentPageState<PayByTemplatePage> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               title ?? '',
               actions: [
                 IconButton(

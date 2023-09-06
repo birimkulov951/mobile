@@ -10,7 +10,7 @@ enum AppUpdateStatus {
 }
 
 class MC {
-  final MethodChannel _methodChannel = MethodChannel('app.paynet.uz.mc');
+  final MethodChannel _methodChannel = MethodChannel('app.example.uz.mc');
 
   /// Проверка наличия обновления. Реализовано пока только для андроида.
   void checkAppUpdate({

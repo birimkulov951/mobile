@@ -149,7 +149,7 @@ abstract class MakePaymentState<T extends StatefulWidget>
       }
 
       if (paymentType == PaymentType.ADD_NEW_ACCOUNT)
-        attachPaynetId();
+        attachPynetId();
       else {
         onShowContent();
         onConfirmPay();
@@ -210,7 +210,7 @@ abstract class MakePaymentState<T extends StatefulWidget>
     );
   }
 
-  void onPaynetIdAttached({String? error}) {
+  void onPynetIdAttached({String? error}) {
     onShowContent();
 
     if (error != null) {
@@ -785,7 +785,7 @@ abstract class MakePaymentState<T extends StatefulWidget>
   }
 
   /// Закрепление лицевого счёта
-  void attachPaynetId() {
+  void attachPynetId() {
     if (payBill?.id == null) {
       return;
     }

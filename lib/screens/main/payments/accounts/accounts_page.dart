@@ -220,9 +220,9 @@ class _AccountsPageState extends BaseAccountsState<AccountsPage> {
   }
 
   @override
-  void onGetPaynetIdList({String? error}) {
+  void onGetPynetIdList({String? error}) {
     updateCompleter?.complete();
-    super.onGetPaynetIdList(error: error);
+    super.onGetPynetIdList(error: error);
   }
 
   @override

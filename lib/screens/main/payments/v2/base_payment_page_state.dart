@@ -131,8 +131,8 @@ abstract class BasePaymentPageState<T extends StatefulWidget>
   //TODO (Abdurahmon): redo via elementary in the future
   void _checkUserSetCardDefault() {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      final paynetLocalStorage = await inject<Box>();
-      final pickedCardId = await paynetLocalStorage.get('card_id');
+      final pynetLocalStorage = await inject<Box>();
+      final pickedCardId = await pynetLocalStorage.get('card_id');
       currentCard = homeData?.cards.firstWhereOrNull((card) {
         return card.id == pickedCardId;
       });

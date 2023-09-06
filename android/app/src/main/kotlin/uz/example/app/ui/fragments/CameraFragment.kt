@@ -16,7 +16,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import uz.paynet.app.R
+import uz.example.app.R
 import io.fotoapparat.Fotoapparat
 import io.fotoapparat.characteristic.LensPosition
 import io.fotoapparat.configuration.CameraConfiguration

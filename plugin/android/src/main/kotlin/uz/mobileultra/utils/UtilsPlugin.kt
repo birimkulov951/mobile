@@ -82,7 +82,7 @@ class UtilsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
                 val contactList = ArrayList<HashMap<String, Any>>()
                 val phoneList = ArrayList<String>()
 
-                //Log.d("paynet.log", "prefix: ${call.arguments?:""}")
+                //Log.d("pynet.log", "prefix: ${call.arguments?:""}")
                 activity.apply {
                     val contentResolver = this.contentResolver
 
@@ -105,7 +105,7 @@ class UtilsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
                                 var phone = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
                                         .replace(" ", "").replace("-", "").replace("+", "")
 
-                                //Log.d("paynet.log", "$name $phone")
+                                //Log.d("pynet.log", "$name $phone")
 
                                 if (phone.length == 9)
                                     phone = "998$phone"
@@ -159,7 +159,7 @@ class UtilsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
                                 }
                             }
                             catch (ex: Exception) {
-                                Log.d("paynet.log", "get contact exception")
+                                Log.d("pynet.log", "get contact exception")
                             }
                         }
                         while (phones.moveToNext())
@@ -168,7 +168,7 @@ class UtilsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
                     phones?.close()
                     avatars.clear()
 
-                    //Log.d("paynet.log", "telegram_____________________________")
+                    //Log.d("pynet.log", "telegram_____________________________")
 
                     val telegramPhones = contentResolver.query(
                         ContactsContract.Data.CONTENT_URI,
@@ -195,10 +195,10 @@ class UtilsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
                                 if (plusIndex != -1)
                                     number = number.substring(plusIndex + 1, number.length)
 
-                                //Log.d("paynet.log", "----------------------------------")
-                                //Log.d("paynet.log", "${telegramPhones.getString(2)?:""}")
-                                //Log.d("paynet.log", "${telegramPhones.getString(1)?:""}")
-                                //Log.d("paynet.log", "${telegramPhones.getString(0)?:""}")
+                                //Log.d("pynet.log", "----------------------------------")
+                                //Log.d("pynet.log", "${telegramPhones.getString(2)?:""}")
+                                //Log.d("pynet.log", "${telegramPhones.getString(1)?:""}")
+                                //Log.d("pynet.log", "${telegramPhones.getString(0)?:""}")
 
                                 if (number.length == 9)
                                     number = "998$number"
@@ -220,7 +220,7 @@ class UtilsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
                                 }
                             }
                             catch (ex: Exception) {
-                                Log.d("paynet.log", "get telegram contact exception")
+                                Log.d("pynet.log", "get telegram contact exception")
                             }
                         }
                         while (telegramPhones.moveToNext())

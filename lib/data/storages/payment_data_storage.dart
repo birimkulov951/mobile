@@ -15,9 +15,9 @@ import 'package:mobile_ultra/utils/translit.dart';
 @injectable
 class PaymentDataStorage {
   final Box<CategoryHiveObject> _categories =
-      Hive.box<CategoryHiveObject>('paynet_payment_categories');
+      Hive.box<CategoryHiveObject>('pynet_payment_categories');
   final Box<MerchantHiveObject> _merchants =
-      Hive.box<MerchantHiveObject>('paynet_merchants');
+      Hive.box<MerchantHiveObject>('pynet_merchants');
 
   /// Checks, if payment data is loaded.
   bool get isPaymentDataLoaded => _categories.values.isNotEmpty;

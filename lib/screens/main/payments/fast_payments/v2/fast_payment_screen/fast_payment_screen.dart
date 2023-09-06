@@ -23,7 +23,7 @@ class FastPaymentScreen
   @override
   Widget build(IFastPaymentScreenWidgetModel wm) {
     return Scaffold(
-      appBar: PaynetAppBar(
+      appBar: PynetAppBar(
         locale.getText('fast_pay_title'),
         centerTitle: false,
       ),

@@ -1,16 +1,11 @@
 # mobile
 
-Paynet mobile app (Qulay pul).
+Example app.
 Version with hidden all valuable information such as tokens, keys, links and etc.
 
 ## About
 
 This repository serves the source code for Paynet mobile app for iOS and Android built with Flutter
-
-For more details, please visit the following page:
-- [Project Paynet Mobile](https://ipsuz.atlassian.net/wiki/spaces/PM/overview?homepageId=262214)
-
-## [Additional Topics](docs/contents.md)
 
 ## Quick start
 

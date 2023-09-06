@@ -31,9 +31,9 @@ import 'package:mobile_ultra/ui_models/modal_sheet/view_modal_sheet_dialog.dart'
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
 import 'package:ui_kit/ui_kit.dart' as uikit;
 
-const _paynetMail = 'support@paynet.uz';
-const _paynetCallCenter = 'tel:+998712020707';
-const _paynetCallCenterTelegram = 'https://t.me/PaynetCallCenter_bot';
+const _pynetMail = 'support@pynet.uz';
+const _pynetCallCenter = 'tel:+998712020707';
+const _pynetCallCenterTelegram = 't';
 
 class ProfileWidget extends StatefulWidget {
   static const String UpdateUI = "updateUI";
@@ -316,7 +316,7 @@ class ProfileWidgetState extends BaseInheritedTheme<ProfileWidget>
   }
 
   void _launchTelegram() => launchUrl(
-        Uri.parse(_paynetCallCenterTelegram),
+        Uri.parse(_pynetCallCenterTelegram),
         mode: LaunchMode.externalApplication,
       );
 
@@ -334,7 +334,7 @@ class ProfileWidgetState extends BaseInheritedTheme<ProfileWidget>
           onSuccess: () {
             Navigator.pop(context);
             Future.delayed(const Duration(milliseconds: 250), () async {
-              final uri = Uri.parse(_paynetCallCenter);
+              final uri = Uri.parse(_pynetCallCenter);
               if (await canLaunchUrl(uri)) {
                 launchUrl(uri);
               } else {
@@ -356,7 +356,7 @@ class ProfileWidgetState extends BaseInheritedTheme<ProfileWidget>
   Future<void> _sendEmail() async {
     final uri = Uri(
       scheme: 'mailto',
-      path: _paynetMail,
+      path: _pynetMail,
     );
 
     if (await canLaunchUrl(uri)) {

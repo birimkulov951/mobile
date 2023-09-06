@@ -5,8 +5,8 @@ import 'package:mobile_ultra/resource/assets.dart';
 import 'package:mobile_ultra/resource/text_styles.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
 
-class PaynetAppBar extends StatelessWidget implements PreferredSizeWidget {
-  PaynetAppBar(
+class PynetAppBar extends StatelessWidget implements PreferredSizeWidget {
+  PynetAppBar(
     this.title, {
     Key? key,
     this.centerTitle = false,

@@ -25,7 +25,7 @@ class AboutWidget extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 24, bottom: 21),
-                  child: SvgPicture.asset('assets/graphics/paynet.svg'),
+                  child: SvgPicture.asset('assets/graphics/pynet.svg'),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(left: 16, right: 16),

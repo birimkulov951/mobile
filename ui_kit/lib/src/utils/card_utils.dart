@@ -490,7 +490,7 @@ Widget cardIconFronType(int? cardType,
     icon = MerchantIcons.bankUzcard16;
   }
   if (cardType == 5) {
-    icon = MerchantIcons.bankPaynet16;
+    icon = MerchantIcons.bankpynet16;
   }
   return _cardIconContainer(icon: icon, bg: bg);
 }
@@ -519,7 +519,7 @@ Widget cardBrandTextLogoFromType(int? cardType) {
   } else if (cardType == 1) {
     icon = ProductIcons.uzcardTextLogo;
   } else if (cardType == 2) {
-    icon = ProductIcons.paynetTextLogo;
+    icon = ProductIcons.pynetTextLogo;
   }
 
   return icon ?? const SizedBox.shrink();
@@ -533,7 +533,7 @@ SvgPicture bigCardLogo(int? cardType) {
   } else if (cardType == 4) {
     icon = Logo.humo;
   } else {
-    icon = Logo.paynet;
+    icon = Logo.pynet;
   }
   return icon;
 }

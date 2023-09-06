@@ -21,7 +21,7 @@ class TransferBanksScreen extends ElementaryWidget<IBanksScreenWidgetModel> {
 
   @override
   Widget build(IBanksScreenWidgetModel wm) => Scaffold(
-        appBar: PaynetAppBar(locale.getText('choose_bank')),
+        appBar: PynetAppBar(locale.getText('choose_bank')),
         body: ItemContainer(
           margin: EdgeInsets.only(top: 4, left: 16, right: 16),
           height: double.infinity,

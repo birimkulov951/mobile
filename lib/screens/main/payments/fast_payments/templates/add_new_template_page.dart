@@ -66,7 +66,7 @@ class AddNewTemplatePageState extends BasePaymentPageState<AddNewTemplatePage> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               paymentParams?.title ?? '',
             ),
             body: scrolledForm,

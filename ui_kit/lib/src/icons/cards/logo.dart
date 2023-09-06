@@ -5,7 +5,7 @@ const _actionsAssetsPath = 'assets/svg/icons/cards/logo';
 SvgPicture _svgAsset(assetName) {
   return SvgPicture.asset(
     '$_actionsAssetsPath/$assetName',
-    package: 'paynet_uikit',
+    package: 'ui_kit',
   );
 }
 
@@ -14,5 +14,5 @@ class Logo {
 
   static final uzcard = _svgAsset('ic_uzcard.svg');
   static final humo = _svgAsset('ic_humo.svg');
-  static final paynet = _svgAsset('ic_paynet.svg');
+  static final pynet = _svgAsset('ic_pynet.svg');
 }

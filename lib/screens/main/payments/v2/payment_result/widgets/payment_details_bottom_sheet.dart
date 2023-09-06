@@ -169,9 +169,9 @@ class _PaymentDetailsBottomSheetState extends State<PaymentDetailsBottomSheet>
 
     var htmlReceipt = utf8.decode(base64Decode(receipt)).replaceAll('�', '');
 
-    final paynetReceipt = transaction?.pynetReceipt;
+    final pynetReceipt = transaction?.pynetReceipt;
 
-    final Map<String, dynamic>? details = paynetReceipt == null
+    final Map<String, dynamic>? details = pynetReceipt == null
         ? null
         : jsonDecode(transaction!.pynetReceipt!)?['details'];
 

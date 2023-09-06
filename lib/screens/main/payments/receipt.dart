@@ -35,7 +35,7 @@ class ReceiptWidgetState extends BasePaymentResultState<ReceiptWidget> {
 
     Map<String, dynamic> receipt = {};
     try {
-      receipt = jsonDecode(transaction.paynetReceipt ?? '{}');
+      receipt = jsonDecode(transaction.pynetReceipt ?? '{}');
     } on Object catch (_) {}
 
     if (receipt.isNotEmpty) {
@@ -97,7 +97,7 @@ class ReceiptWidgetState extends BasePaymentResultState<ReceiptWidget> {
 
     column.children.add(
       ReceiptItem(
-        label: "uzpaynet_comission",
+        label: "uzpynet_comission",
         value: mobileQrDto.pynetComission.toString(),
         onCopied: onCopied,
       ),
@@ -180,12 +180,12 @@ class ReceiptWidgetState extends BasePaymentResultState<ReceiptWidget> {
 
     Map<String, dynamic> receipt = {};
     try {
-      receipt = jsonDecode(transaction.paynetReceipt ?? '{}');
+      receipt = jsonDecode(transaction.pynetReceipt ?? '{}');
     } on Object catch (_) {}
 
     if (receipt.isNotEmpty) {
       final Map<String, dynamic> details =
-          jsonDecode(transaction.paynetReceipt)['details'];
+          jsonDecode(transaction.pynetReceipt)['details'];
       details.remove('select');
       details.forEach((key, value) {
         toSave[value['label']] = value['value'] ?? '';
@@ -221,7 +221,7 @@ class ReceiptWidgetState extends BasePaymentResultState<ReceiptWidget> {
 
   void _toSaveRenderQR(
       Map<String, dynamic> toSave, final PaymentQr mobileQrDto) {
-    toSave[locale.getText('uzpaynet_comission')] =
+    toSave[locale.getText('uzpynet_comission')] =
         mobileQrDto.pynetComission.toString();
     toSave[locale.getText('with_nds')] = mobileQrDto.vat.toString();
     toSave[locale.getText('total_to_pay')] = mobileQrDto.totalAmount.toString();

@@ -13,7 +13,7 @@ import 'package:mobile_ultra/utils/u.dart';
 import 'package:mobile_ultra/widgets/locale/locale_builder.dart';
 import 'package:mobile_ultra/widgets/locale/text_locale.dart';
 
-const _paynetCardIdLeading = 'UZ998';
+const _pynetCardIdLeading = 'UZ998';
 
 class CardDetailHeader extends StatelessWidget {
   final num price;
@@ -140,10 +140,10 @@ class CardDetailHeader extends StatelessWidget {
     }
 
     if (tranType == TranType.credit.value) {
-      if (pan.contains(_paynetCardIdLeading)) {
+      if (pan.contains(_pynetCardIdLeading)) {
         return merchantHash != null
             ? SvgPicture.asset(Assets.cashback)
-            : Image.asset(Assets.paynetCard);
+            : Image.asset(Assets.pynetCard);
       } else if (card1Length == 16) {
         return Padding(
           padding: EdgeInsets.all(10),

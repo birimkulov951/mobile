@@ -5,7 +5,7 @@ import android.media.Image
 import com.google.android.gms.tasks.Task
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
-import uz.paynet.app.utils.ImageUtil
+import uz.example.app.utils.ImageUtil
 import io.fotoapparat.preview.Frame
 import java.nio.ByteBuffer
 import java.util.concurrent.atomic.AtomicBoolean

@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import uz.paynet.app.R
-import uz.paynet.app.common.IntentData
+import uz.example.app.R
+import uz.example.app.common.IntentData
 
 class PassportPhotoFragment : androidx.fragment.app.Fragment() {
 

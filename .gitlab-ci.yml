@@ -89,10 +89,10 @@ fastlane_ios:
     - cd ios/
     - bundle update
     - bundle exec fastlane $IOS_BUILD_OPS
-    - cd ../ && cp build/ios/*.ipa PAYNET.ipa
+    - cd ../ && cp build/ios/*.ipa .ipa
   artifacts:
     paths:
-      - PAYNET.ipa
+      - .ipa
     expire_in: 1 day
   tags:
     - flutter-ios

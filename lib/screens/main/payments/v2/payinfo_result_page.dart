@@ -120,7 +120,7 @@ class PayinfoResultPageState extends BaseInheritedTheme<PayinfoResultPage>
   Widget get formWidget => Stack(
         children: [
           Scaffold(
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               'payment_confirm',
             ),
             body: scrolledForm,

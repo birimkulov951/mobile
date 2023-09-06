@@ -91,7 +91,7 @@ abstract class BasePaymentResultState<T extends StatefulWidget>
                 color: Colors.black,
                 onPressed: () {
                   final Map<String, dynamic> _details =
-                      jsonDecode(transaction.paynetReceipt)['details'];
+                      jsonDecode(transaction.pynetReceipt)['details'];
 
                   PaymentByRequisitesCheckerPresenter().checkStatus(
                     transactionId: _details['transaction_id']['value'],
@@ -270,7 +270,7 @@ abstract class BasePaymentResultState<T extends StatefulWidget>
       tranUpdated = true;
 
       if (result != null) {
-        transaction.paynetReceipt = jsonDecode(result)['paynetReceipt'];
+        transaction.pynetReceipt = jsonDecode(result)['pynetReceipt'];
       }
     });
   }
@@ -299,7 +299,7 @@ abstract class BasePaymentResultState<T extends StatefulWidget>
   Future<String> getDataToPrint() async {
     final List<String> printList = [];
     final Map<String, dynamic> details =
-        jsonDecode(transaction.paynetReceipt)['details'];
+        jsonDecode(transaction.pynetReceipt)['details'];
 
     details.forEach((key, value) {
       final String k = value['label'].toString();
@@ -351,7 +351,7 @@ abstract class BasePaymentResultState<T extends StatefulWidget>
       printList.add(jsonEncode({
         'type': 'data',
         'info':
-            '${locale.getText("uzpaynet_comission")}: ${mobileQrDto.pynetComission.toString()}',
+            '${locale.getText("uzpynet_comission")}: ${mobileQrDto.pynetComission.toString()}',
         'size': 28,
         'align': 'LEFT',
       }));
@@ -418,7 +418,7 @@ abstract class BasePaymentResultState<T extends StatefulWidget>
       printList.add(jsonEncode({
         'type': 'data',
         'info':
-            '${locale.getText("bank_card_number")} (UZPAYNET): ${mobileQrDto.terminalId.toString()}',
+            '${locale.getText("bank_card_number")} (UZpynet): ${mobileQrDto.terminalId.toString()}',
         'size': 28,
         'align': 'LEFT',
       }));
@@ -482,7 +482,7 @@ abstract class BasePaymentResultState<T extends StatefulWidget>
   void saveReceiptToPdf(String receipt) async {
     var htmlReceipt = utf8.decode(base64Decode(receipt)).replaceAll('�', '');
     final Map<String, dynamic> details =
-        jsonDecode(transaction.paynetReceipt)['details'];
+        jsonDecode(transaction.pynetReceipt)['details'];
 
     details.forEach((key, value) {
       htmlReceipt = htmlReceipt.replaceAll('#$key#', value['value'] ?? '');

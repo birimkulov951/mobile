@@ -28,7 +28,7 @@ class TransferConfirmationScreen
       valueListenable: wm.isLoadingState,
       builder: (context, isLoading, _) {
         return Scaffold(
-          appBar: PaynetAppBar('transfer_confirm'),
+          appBar: PynetAppBar('transfer_confirm'),
           body: Stack(
             children: [
               SingleChildScrollView(

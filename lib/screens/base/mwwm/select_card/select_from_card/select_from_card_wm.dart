@@ -59,8 +59,8 @@ mixin SelectFromCardMixin<W extends ElementaryWidget<IWidgetModel>,
 
     selectFromCardState.accept(result);
     //TODO: перенести логику в model
-    final paynetLocalStorage = inject<ChosenPaymentCardStorage>();
-    await paynetLocalStorage.saveLastPickedCardId(pickedCardId: result.id);
+    final pynetLocalStorage = inject<ChosenPaymentCardStorage>();
+    await pynetLocalStorage.saveLastPickedCardId(pickedCardId: result.id);
     return true;
   }
 
@@ -71,8 +71,8 @@ mixin SelectFromCardMixin<W extends ElementaryWidget<IWidgetModel>,
 
   //TODO: перенести в model
   Future<UCard.AttachedCard?> getStoredCard() async {
-    final paynetLocalStorage = inject<ChosenPaymentCardStorage>();
-    final pickedCardId = await paynetLocalStorage.getLastPickedCardId();
+    final pynetLocalStorage = inject<ChosenPaymentCardStorage>();
+    final pickedCardId = await pynetLocalStorage.getLastPickedCardId();
     final storedCard =
         homeData?.cards.firstWhereOrNull((card) => card.id == pickedCardId);
     return storedCard;

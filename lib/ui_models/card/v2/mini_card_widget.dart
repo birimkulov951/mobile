@@ -59,7 +59,7 @@ class MiniCardWidget extends StatelessWidget {
     switch (uCard?.type) {
       case Const.BONUS:
         return SvgPicture.asset(
-          'assets/graphics/dark/paynet.svg',
+          'assets/graphics/dark/pynet.svg',
           height: 7,
         );
       default:

@@ -88,7 +88,7 @@ class _EditTemplateWidgetState
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               'edit_template',
             ),
             body: scrolledForm,

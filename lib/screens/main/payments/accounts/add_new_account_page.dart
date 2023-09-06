@@ -45,7 +45,7 @@ class AddNewAccountPageState extends BasePaymentPageState<AddNewAccountPage> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               paymentParams?.title ?? '',
             ),
             body: scrolledForm,

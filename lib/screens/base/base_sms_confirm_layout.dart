@@ -77,7 +77,7 @@ abstract class BaseSMSConfirmLayout<T extends StatefulWidget>
     return Stack(
       children: [
         Scaffold(
-          appBar: PaynetAppBar(
+          appBar: PynetAppBar(
             '',
             backgroundColor: ColorNode.ContainerColor,
           ),

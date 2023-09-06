@@ -72,7 +72,7 @@ class GNKPaymentWidgetState extends BasePaymentPageState<GNKPaymentWidget> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               paymentParams?.title ?? '',
             ),
             body: scrolledForm,

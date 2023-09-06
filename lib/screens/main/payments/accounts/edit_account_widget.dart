@@ -54,7 +54,7 @@ class _EditAccountWidgetState extends BasePaymentPageState<EditAccountWidget> {
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               'edit_account',
             ),
             body: scrolledForm,

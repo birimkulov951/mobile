@@ -46,7 +46,7 @@ class MostCommonPaymentPageState
         children: [
           Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               paymentParams?.title ?? '',
             ),
             body: scrolledForm,

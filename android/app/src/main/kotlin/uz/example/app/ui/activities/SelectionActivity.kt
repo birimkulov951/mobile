@@ -4,10 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import uz.paynet.app.R
-import uz.paynet.app.common.IntentData
-import uz.paynet.app.common.IntentData.METHOD_CHANNEL_NFC_INVOKE_WITH
-import uz.paynet.app.ui.fragments.SelectionFragment
+import uz.example.app.R
+import uz.example.app.common.IntentData
+import uz.example.app.common.IntentData.METHOD_CHANNEL_NFC_INVOKE_WITH
+import uz.example.app.ui.fragments.SelectionFragment
 import org.jmrtd.lds.icao.MRZInfo
 
 class SelectionActivity : AppCompatActivity(), SelectionFragment.SelectionFragmentListener {

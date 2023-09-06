@@ -5,9 +5,9 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import uz.paynet.app.R
-import uz.paynet.app.common.IntentData
-import uz.paynet.app.ui.fragments.CameraMLKitFragment
+import uz.example.app.R
+import uz.example.app.common.IntentData
+import uz.example.app.ui.fragments.CameraMLKitFragment
 import org.jmrtd.lds.icao.MRZInfo
 
 class CameraActivity : AppCompatActivity(), CameraMLKitFragment.CameraMLKitCallback {

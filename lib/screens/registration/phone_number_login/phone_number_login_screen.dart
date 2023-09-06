@@ -24,7 +24,7 @@ class PhoneNumberLoginScreen
   Widget build(IPhoneNumberLoginScreenWidgetModel wm) => Stack(
         children: [
           Scaffold(
-            appBar: PaynetAppBar(
+            appBar: PynetAppBar(
               '',
               leading: wm.leading,
               backgroundColor: ColorNode.ContainerColor,

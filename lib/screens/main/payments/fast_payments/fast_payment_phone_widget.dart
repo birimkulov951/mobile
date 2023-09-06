@@ -121,7 +121,7 @@ class FastPaymentWidgetState extends BaseInheritedTheme<FastPaymentWidget>
       child: Stack(
         children: <Widget>[
           Scaffold(
-            appBar: PaynetAppBar('fast_pay_title'),
+            appBar: PynetAppBar('fast_pay_title'),
             body: inputForm,
           ),
           LoadingWidget(showLoading: showLoading),

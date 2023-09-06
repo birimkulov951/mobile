@@ -75,7 +75,7 @@ class CurrentCardContainer extends StatelessWidget {
       case 1:
         return Assets.uzcardLogo;
       case 2:
-        return Assets.paynetLogo;
+        return Assets.pynetLogo;
       case 4:
         return Assets.humoLogo;
       default:
