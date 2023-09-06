@@ -14,7 +14,7 @@ import 'package:mobile_ultra/utils/const.dart';
 import 'package:intl/intl.dart';
 
 const _sizeOfMerchantImage = 46.0;
-const _paynetCardIdLeading = 'UZ998';
+const _pynetCardIdLeading = 'UZ998';
 
 class HistoryTransactionItem extends StatelessWidget {
   final String title;
@@ -209,7 +209,7 @@ class HistoryTransactionItem extends StatelessWidget {
     }
 
     if (tranType == TranType.credit.value) {
-      if (pan.contains(_paynetCardIdLeading)) {
+      if (pan.contains(_pynetCardIdLeading)) {
         return merchantHash != null
             ? SvgPicture.asset(Assets.cashback)
             : Image.asset(Assets.pynetCard);

@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:paynet_uikit/paynet_uikit.dart' as uikit;
+import 'package:ui_kit/ui_kit.dart' as uikit;
 
 void main() {
   late TextEditingController controller;

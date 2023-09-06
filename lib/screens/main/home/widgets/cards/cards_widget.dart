@@ -16,7 +16,7 @@ class CardsWidget extends StatelessWidget {
   const CardsWidget({
     required this.attachNewCard,
     required this.warningText,
-    required this.getPaynetUCards,
+    required this.getPynetUCards,
     required this.openAllCards,
     required this.onEditCard,
     required this.allCardsData,
@@ -26,7 +26,7 @@ class CardsWidget extends StatelessWidget {
 
   final bool hideBalance;
   final Future Function() attachNewCard;
-  final VoidCallback getPaynetUCards;
+  final VoidCallback getPynetUCards;
   final Future Function() openAllCards;
   final Future Function(AttachedCard) onEditCard;
   final String Function(CardStatus?) warningText;

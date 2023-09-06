@@ -14,7 +14,7 @@
     </base-config>-->
 
     <domain-config>
-        <domain includeSubdomains="true">smart.paynet.uz</domain>
+        <domain includeSubdomains="true">main.example.uz</domain>
         <trust-anchors>
             <certificates src="user"/>
             <certificates src="system"/>

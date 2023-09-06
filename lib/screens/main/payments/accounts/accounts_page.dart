@@ -34,7 +34,7 @@ const _refresherStrokeWidth = 2.0;
 const _clampUpperLimit = 1.25;
 const _clampHelper = 0.25;
 
-/// Список закреплённых лицевых счетов (PaynetId) пользователя
+/// Список закреплённых лицевых счетов (PynetId) пользователя
 class AccountsPage extends StatefulWidget {
   const AccountsPage(this.merchantRepository, {super.key});
 

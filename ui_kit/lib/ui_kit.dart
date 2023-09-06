@@ -1,4 +1,4 @@
-library paynet_uikit;
+library ui_kit;
 
 export 'src/components/action_buttons/quick_action_button_v2.dart';
 export 'src/commons/icon_container.dart';

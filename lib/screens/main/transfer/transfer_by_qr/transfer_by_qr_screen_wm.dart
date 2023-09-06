@@ -15,7 +15,7 @@ import 'package:mobile_ultra/screens/main/transfer/transfer_by_qr/transfer_by_qr
 const _smallScreenWidthLimit = 400;
 const _overlaySizeForBigScreens = 300.0;
 const _overlaySizeForSmallScreens = 200.0;
-const _subDomain = 'app.paynet.uz';
+const _subDomain = 'main.example.com';
 
 abstract class ITransferByQrScreenWidgetModel extends IWidgetModel
     with ISystemWidgetModelMixin {

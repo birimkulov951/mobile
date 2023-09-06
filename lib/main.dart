@@ -115,7 +115,7 @@ String getAccessToken() {
   return '${pref?.tokenType} ${pref?.accessToken}';
 }
 
-// todo rename this class to 'paynet_app.dart' and move classes to another folder later to avoid conflicts
+// todo rename this class to 'pynet_app.dart' and move classes to another folder later to avoid conflicts
 Future launchApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   updateSystemUIOverlay();

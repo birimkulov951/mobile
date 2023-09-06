@@ -49,7 +49,7 @@ class PositiveNegativeOption extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Text(
-                  locale.getText('how_is_paynet'),
+                  locale.getText('how_is_pynet'),
                   style: TextStyles.title5,
                 ),
                 SizedBox(height: 12),

@@ -84,8 +84,8 @@ class FastPaymentWidgetState extends BaseInheritedTheme<FastPaymentWidget>
   //TODO (Abdurahmon): redo via elementary in the future
   void _checkUserSetCardDefault() {
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      final paynetLocalStorage = inject<Box>();
-      final pickedCardId = paynetLocalStorage.get('card_id');
+      final pynetLocalStorage = inject<Box>();
+      final pickedCardId = pynetLocalStorage.get('card_id');
       currentCard = homeData?.cards.firstWhereOrNull((card) {
         return card.id == pickedCardId;
       });
@@ -500,8 +500,8 @@ class FastPaymentWidgetState extends BaseInheritedTheme<FastPaymentWidget>
     if (resultCard != null) {
       setState(() => currentCard = resultCard);
       if (currentCard?.type != Const.BONUS) {
-        final paynetLocalStorage = await inject<Box>();
-        await paynetLocalStorage.put('card_id', currentCard?.id);
+        final pynetLocalStorage = await inject<Box>();
+        await pynetLocalStorage.put('card_id', currentCard?.id);
       }
 
       _checkAmount();

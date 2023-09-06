@@ -19,7 +19,7 @@ import 'package:ui_kit/ui_kit.dart' as uikit;
 import 'package:sprintf/sprintf.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/currency_input_bottom_sheet.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/currency_input_bottom_sheet_model.dart';
-import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/exceptions/could_not_make_paynet_exception.dart';
+import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/exceptions/could_not_make_payment_exception.dart';
 import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/exceptions/phone_number_not_found_exception.dart';
 
 abstract class ICurrencyInputBottomSheetWidgetModel extends IWidgetModel
@@ -40,7 +40,7 @@ abstract class ICurrencyInputBottomSheetWidgetModel extends IWidgetModel
 
 const _maxPayAmount = 1500000;
 const _minPayAmount = 500;
-const _paynetCellularMerchantId = 7449;
+const _pynetCellularMerchantId = 7449;
 
 class CurrencyInputBottomSheetWidgetModel
     extends WidgetModel<CurrencyInputBottomSheet, CurrencyInputBottomSheetModel>
@@ -257,7 +257,7 @@ class CurrencyInputBottomSheetWidgetModel
   void _trackAnalyticsEvent() {
     AnalyticsInteractor.instance.paymentTracker.trackSuccess(
       source: getTransferSourceTypesByInt(selectFromCardState.value?.type),
-      merchantId: _paynetCellularMerchantId,
+      merchantId: _pynetCellularMerchantId,
       amount: int.parse(amountBigController.text.replaceAll(' ', '')),
       isFastPay: widget.arguments.isFastPay,
     );

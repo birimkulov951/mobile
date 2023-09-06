@@ -34,7 +34,7 @@ import 'package:mobile_ultra/widgets/feedback_bottom_sheets/feedback_bottom_shee
 import 'package:ui_kit/ui_kit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-const _paynetCallCenterTelegram = 'https://t.me/PaynetCallCenter_bot';
+const _pynetCallCenterTelegram = '';
 const _requisiteMerchantId = 6710;
 
 abstract class IHomeScreenWidgetModel extends IWidgetModel
@@ -319,7 +319,7 @@ class HomeScreenWidgetModel extends WidgetModel<HomeScreen, HomeScreenModel>
 
   @override
   void onSupportTap() => launchUrl(
-        Uri.parse(_paynetCallCenterTelegram),
+        Uri.parse(_pynetCallCenterTelegram),
         mode: LaunchMode.externalApplication,
       );
 

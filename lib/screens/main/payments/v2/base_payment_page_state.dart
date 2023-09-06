@@ -441,8 +441,8 @@ abstract class BasePaymentPageState<T extends StatefulWidget>
       onChangeCurrentCard(currentCard);
       //TODO (Abdurahmon): redo via elementary in the future
       if (currentCard?.type != Const.BONUS) {
-        final paynetLocalStorage = await inject<Box>();
-        await paynetLocalStorage.put('card_id', currentCard?.id);
+        final pynetLocalStorage = await inject<Box>();
+        await pynetLocalStorage.put('card_id', currentCard?.id);
       }
     }
   }

@@ -340,7 +340,7 @@ class NavigationWidgetState extends BaseInheritedTheme<NavigationWidget>
   void onQReadResult(String link) async {
     printLog(link);
 
-    if (link.contains('app.paynet.uz')) {
+    if (link.contains('app.example.uz')) {
       if (link.contains('?qrp2p=')) {
         sharingData = link;
 

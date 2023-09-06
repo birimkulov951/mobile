@@ -14,7 +14,7 @@ import 'package:mobile_ultra/widgets/feedback_bottom_sheets/feedback_bottom_shee
 import 'package:url_launcher/url_launcher.dart';
 
 const _playStoreUrlLink =
-    "https://play.google.com/store/apps/details?id=uz.paynet.app";
+    "";
 
 enum BottomSheetStatus {
   chooseOption,

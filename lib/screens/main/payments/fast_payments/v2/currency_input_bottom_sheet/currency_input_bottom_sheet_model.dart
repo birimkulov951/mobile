@@ -3,10 +3,10 @@ import 'package:mobile_ultra/domain/payment/payment_result.dart';
 import 'package:mobile_ultra/net/card/model/card.dart' as UCard;
 import 'package:mobile_ultra/repositories/merchant_repository.dart';
 import 'package:mobile_ultra/repositories/payment_repository.dart';
-import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/exceptions/could_not_make_paynet_exception.dart';
+import 'package:mobile_ultra/screens/main/payments/fast_payments/v2/currency_input_bottom_sheet/exceptions/could_not_make_payment_exception.dart';
 import 'package:mobile_ultra/screens/main/transfer/abroad/transfer_abroad_confirmation/exceptions/otp_exception.dart';
 
-const _paynetCellularMerchantId = 7449;
+const _pynetCellularMerchantId = 7449;
 
 class CurrencyInputBottomSheetModel extends ElementaryModel {
   CurrencyInputBottomSheetModel({
@@ -24,7 +24,7 @@ class CurrencyInputBottomSheetModel extends ElementaryModel {
   }) async {
     try {
       final merchant =
-          merchantRepository.findMerchant(_paynetCellularMerchantId);
+          merchantRepository.findMerchant(_pynetCellularMerchantId);
       if (merchant == null) {
         return PaymentResult.failed(CouldNotMakePaymentException());
       }

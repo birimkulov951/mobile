@@ -64,7 +64,7 @@ class SunMI {
                 printerService?.let { printer ->
                     val bmp = BitmapFactory.decodeResource(
                         context.resources,
-                        R.drawable.paynet_black
+                        R.drawable.pynet_black
                     )
 
                     printer.setAlignment(1, printingCallBack)

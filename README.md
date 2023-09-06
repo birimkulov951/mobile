@@ -5,7 +5,7 @@ Version with hidden all valuable information such as tokens, keys, links and etc
 
 ## About
 
-This repository serves the source code for Paynet mobile app for iOS and Android built with Flutter
+This repository serves the source code for Example mobile app for iOS and Android built with Flutter
 
 ## Quick start
 

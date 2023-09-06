@@ -5,7 +5,7 @@ final _actionsAssetsPath = 'assets/svg/icons/merchants';
 SvgPicture _svgAsset(assetName) {
   return SvgPicture.asset(
     '$_actionsAssetsPath/$assetName',
-    package: 'paynet_uikit',
+    package: 'ui_kit',
   );
 }
 
@@ -20,5 +20,5 @@ class MerchantIcons {
 
   static final bankHumo16 = _svgAsset('ic_bank_humo_x16.svg');
   static final bankUzcard16 = _svgAsset('ic_bank_uzcard_x16.svg');
-  static final bankpynet16 = _svgAsset('ic_bank_paynet_x16');
+  static final bankpynet16 = _svgAsset('ic_bank_pynet_x16');
 }

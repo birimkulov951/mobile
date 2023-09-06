@@ -289,7 +289,7 @@ class _PaymentDetailsBottomSheetState extends State<PaymentDetailsBottomSheet>
 
   void toSaveRenderQR(
       Map<String, dynamic> toSave, final PaymentQr mobileQrDto) {
-    toSave[locale.getText('uzpaynet_comission')] =
+    toSave[locale.getText('uzpynet_comission')] =
         mobileQrDto.pynetComission.toString();
     toSave[locale.getText('with_nds')] = mobileQrDto.vat.toString();
     toSave[locale.getText('total_to_pay')] = mobileQrDto.totalAmount.toString();

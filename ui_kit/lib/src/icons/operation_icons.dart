@@ -5,7 +5,7 @@ const _operationsAssetsPath = 'assets/svg/icons/operations';
 SvgPicture _svgAsset(assetName) {
   return SvgPicture.asset(
     '$_operationsAssetsPath/$assetName',
-    package: 'paynet_uikit',
+    package: 'ui_kit',
   );
 }
 

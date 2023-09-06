@@ -9,7 +9,7 @@
     android:focusable="true"
     android:orientation="vertical">
 
-    <uz.paynet.app.utils.views.TouchImageView
+    <uz.pynet.app.utils.views.TouchImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

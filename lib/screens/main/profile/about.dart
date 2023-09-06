@@ -58,7 +58,7 @@ class AboutWidget extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(16, 4, 16, 28),
                   child: GestureDetector(
                     child: const Text(
-                      'www.paynet.uz',
+                      'www.example.com',
                       style: TextStyle(
                           fontSize: 14,
                           color: ColorNode.Link,

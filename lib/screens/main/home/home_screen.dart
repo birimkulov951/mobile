@@ -91,7 +91,7 @@ class HomeScreen extends ElementaryWidget<IHomeScreenWidgetModel> {
                 CardsWidget(
                   attachNewCard: wm.openCardAddScreen,
                   warningText: wm.warningText,
-                  getPaynetUCards: wm.getAttachedCards,
+                  getPynetUCards: wm.getAttachedCards,
                   openAllCards: wm.openAllCardsScreen,
                   hideBalance: isBalanceHidden,
                   onEditCard: wm.openCardEditScreen,
