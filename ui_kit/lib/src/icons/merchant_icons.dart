@@ -1,6 +1,6 @@
 import 'package:flutter_svg/flutter_svg.dart';
 
-final _actionsAssetsPath = 'assets/svg/icons/merchants';
+const _actionsAssetsPath = 'assets/svg/icons/merchants';
 
 SvgPicture _svgAsset(assetName) {
   return SvgPicture.asset(
