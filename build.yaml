@@ -1,0 +1,25 @@
+targets:
+  $default:
+    builders:
+      injectable_generator:injectable_builder:
+        generate_for:
+          include:
+            - lib/data/dio/**
+            - lib/data/api/**_api.dart
+            - lib/data/**_module.dart
+            - lib/data/**_storage.dart
+            - lib/data/**_repository_impl.dart
+            - lib/data/**_mapper.dart
+            - lib/interactor/**_interactor.dart
+      retrofit_generator:retrofit:
+        generate_for:
+          include:
+            - lib/data/api/**
+      injectable_generator:injectable_config_builder:
+        generate_for:
+          include:
+            - lib/di/**
+      json_serializable:json_serializable:
+        generate_for:
+          include:
+            - lib/data/api/dto/**

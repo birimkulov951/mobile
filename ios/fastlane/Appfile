@@ -1,0 +1,6 @@
+# app_identifier("[[GS.Uzpaynet]]") # The bundle identifier of your app
+# apple_id("[[developer@paynet.uz]]") # Your Apple Developer Portal username
+
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

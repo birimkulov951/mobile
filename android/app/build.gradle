@@ -1,0 +1,184 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion 33
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "uz.paynet.app"
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
+
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'META-INF/androidx.exifinterface_exifinterface.version'
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        development {
+            dimension "app"
+            resValue "string", "application_name", "PAYNET_DEV"
+            versionNameSuffix "-dev"
+        }
+        production {
+            dimension "app"
+            resValue "string", "application_name", "PAYNET"
+        }
+    }
+
+    this.project.afterEvaluate {project ->
+        def buildType = gradle.startParameter.taskNames.any{it.toLowerCase().contains("debug")} ? "debug" : "release"
+        def flavor = gradle.startParameter.taskNames.any{it.toLowerCase().contains("development")} ? "development" : "production"
+        project.tasks.each {
+            task ->
+                if (task.toString().contains("bundle")) {
+                    task.doLast {
+                        copy {
+                            duplicatesStrategy 'include'
+                            from "$buildDir/outputs/bundle/$flavor${buildType.capitalize()}"
+                            into "$buildDir/outputs/bundle/$flavor${buildType.capitalize()}"
+
+                            rename "app-$flavor-${buildType}.aab", "paynet-${android.defaultConfig.versionName}-$flavor-${buildType}.aab"
+                        }
+                    }
+                } else if (task.toString().contains("assemble")) {
+                    task.doLast {
+                        copy {
+                            duplicatesStrategy 'include'
+                            from "$buildDir/outputs/apk/$flavor/$buildType"
+                            into "$buildDir/outputs/apk/$flavor/$buildType"
+
+                            rename "app-$flavor-${buildType}.apk", "paynet-${android.defaultConfig.versionName}-$flavor-${buildType}.apk"
+                        }
+                    }
+                }
+        }
+    }
+
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.core:core-ktx:1.5.0"
+
+    implementation 'com.google.android.play:core:1.10.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+
+    // NFC Passport
+    implementation 'org.jmrtd:jmrtd:0.7.19'
+    implementation 'com.madgag.spongycastle:prov:1.58.0.0'
+    implementation 'net.sf.scuba:scuba-sc-android:0.0.20'
+    implementation group: 'org.ejbca.cvc', name: 'cert-cvc', version: '1.4.6'
+
+    // WSQ
+    implementation 'com.github.mhshams:jnbis:2.0.2'
+
+    //Input data Validator
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+
+    //DatatypeConverter
+    implementation 'commons-codec:commons-codec:1.12'
+
+    //Camera
+    implementation 'io.fotoapparat:fotoapparat:2.7.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //RX
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Runner
+
+  Created by Марат Шакиров on 7/21/20.
+  Copyright © 2020 The Chromium Authors. All rights reserved.
+*/
+"NSCameraUsageDescription"="Данное разрешение требуется для сканирования QR-кодов, карт или документов";
+"NSContactsUsageDescription"="Данное разрешение требуется для выбора номера телефона из контактной книги";
+"NSFaceIDUsageDescription"="Данное разрешение требуется для удобной разблокировки приложения через FaceID";
+"NSPhotoLibraryUsageDescription"="Данное разрешение требуется для доступа к медиа данным";

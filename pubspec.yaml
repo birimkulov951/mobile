@@ -1,0 +1,152 @@
+name: mobile_ultra
+description: A new paynet app
+publish_to: none
+
+version: 7.0.7+202302132
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+  flutter: "3.0.5"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+  flutter_cupertino_localizations: ^1.0.1
+  cupertino_icons: ^1.0.0
+
+  # Architecture packages
+  elementary: ^1.5.0
+
+  # Dependency injection
+  get_it: ^7.2.0
+  injectable: ^1.5.3
+
+  # Firebase
+  firebase_core: ^2.7.0
+  firebase_crashlytics: ^3.0.15
+  firebase_messaging: ^14.2.5
+  firebase_analytics: ^10.1.4
+  firebase_remote_config: ^3.0.13
+
+  # Widgets
+  flutter_svg: ^0.22.0
+  cached_network_image: ^3.2.1
+  custom_refresh_indicator: ^1.2.1
+  lottie: ^1.4.2
+  qr_code_scanner: ^1.0.1
+  simple_gesture_detector: ^0.2.0
+  flutter_mrz_scanner: ^2.1.0
+  carousel_slider: ^4.1.1
+  smooth_page_indicator: ^1.0.0+2
+  fl_chart: ^0.55.2
+  flutter_html: ^2.2.1
+
+  # Networking
+  http: ^0.13.5
+  dio: ^4.0.6
+  retrofit: ^3.0.0
+  json_annotation: ^4.7.0
+
+  # Local storage
+  sqflite: ^2.0.2
+  shared_preferences: ^2.0.15
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Utils
+  path: ^1.8.0-nullsafety.1
+  path_provider: ^2.0.11
+  sprintf: ^6.0.2
+  mask_text_input_formatter: ^2.4.0
+  permission_handler: ^10.0.0
+  url_launcher: ^6.1.7
+  local_auth: ^1.1.11
+  encrypt: ^5.0.1
+  flutter_html_to_pdf: ^0.7.0
+  open_filex: ^4.3.2
+  flutter_local_notifications: ^9.7.0
+  rxdart: ^0.27.5
+  share: ^2.0.4
+  receive_sharing_intent: ^1.4.5
+  qr_flutter: ^4.0.0
+  flutter_dotenv: ^5.0.0
+  amplitude_flutter: ^3.11.0
+  vibration: ^1.7.5
+  pdf: ^3.5.0
+  android_sms_retriever: ^1.3.0
+  connectivity_plus: ^2.3.6+1
+  camera: ^0.10.0+1
+  equatable: ^2.0.3
+  card_scanner: ^1.0.1-prerelease
+  mrz_parser: ^2.0.0
+  app_links: ^3.1.0
+  device_info_plus: ^3.2.4
+  android_id: ^0.1.3+1
+  responsive_framework: ^0.2.0
+  utils:
+    path: plugin/
+  fluttertoast: ^8.1.1
+  flutter_multi_formatter: ^2.9.0
+  appmetrica_plugin: ^1.1.0
+  appmetrica_push: ^1.0.0
+  paynet_uikit:
+    path: paynet_uikit/
+  fast_contacts: ^3.0.3
+  package_info_plus: ^1.4.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+  build_runner: ^2.1.7
+  hive_generator: ^2.0.0
+  injectable_generator: ^1.5.3
+  retrofit_generator: ^4.1.2
+  json_serializable: ^6.3.0
+
+dependency_overrides:
+  firebase_core_platform_interface: 4.5.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/locale/
+    - assets/image/
+    - assets/graphics/
+    - assets/graphics_redesign/
+    - assets/lottie/
+    - .env
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Light-300.ttf
+          weight: 300
+        - asset: assets/fonts/Roboto-Regular-400.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Medium-500.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Bold-700.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto-Black-900.ttf
+          weight: 900
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/SFProDisplay-Light-300.ttf
+          weight: 300
+        - asset: assets/fonts/SFProDisplay-Regular-400.ttf
+          weight: 400
+        - asset: assets/fonts/SFProDisplay-Medium-500.ttf
+          weight: 500
+        - asset: assets/fonts/SFProDisplay-Semibold-600.ttf
+          weight: 600
+        - asset: assets/fonts/SFProDisplay-Bold-700.ttf
+          weight: 700
+        - asset: assets/fonts/SFProDisplay-Heavy-800.ttf
+          weight: 800
+        - asset: assets/fonts/SFProDisplay-Black-900.ttf
+          weight: 900

@@ -1,0 +1,189 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+fastlane_require 'httparty'
+fastlane_require 'dotenv'
+
+default_platform(:ios)
+
+platform :ios do
+    def root_path
+      Dir.pwd.sub(/.*\Kfastlane/, '').sub(/.*\Kandroid/, '').sub(/.*\Kios/, '').sub(/.*\K\/\//, '')
+    end
+
+    lane :sh_on_root do |options|
+        command = options[:command]
+        sh("cd #{root_path} && #{command}")
+    end
+
+    private_lane :archive do |options|
+        method = options[:method]
+        env = ENV['IOS_SCHEME']
+        scheme_type = env == "dev" ? "development" : "production"
+        configuration = env == "dev" ? "Release-development" : "Release-production"
+
+	update_code_signing_settings(
+       		 build_configurations: configuration,
+      		 use_automatic_signing: true
+    	)
+
+	update_project_team(
+      		teamid: ""
+    	)
+
+        build_app(
+                output_directory: "#{root_path}/build/ios/",
+                build_path: "#{root_path}/build/ios/",
+                archive_path: "#{root_path}/build/ios/",
+                output_name: "",
+		export_method: method,
+                scheme: scheme_type,
+                configuration: configuration,
+                xcargs: "-allowProvisioningUpdates"
+           )
+    end
+
+        lane :build do |options|
+		increment_build_number(
+         	       build_number: ENV['CI_PIPELINE_IID']
+        	)
+
+                env = ENV['IOS_SCHEME']
+
+                param = env == "dev" ? '--flavor development --dart-define=isTest=true --target=lib/main_dev.dart' : '--flavor production --dart-define=isTest=true -t lib/main_pro.dart'
+                desc("Cleaning...")
+                sh_on_root(command: "flutter clean && flutter pub get && cd ios/ && pod repo update && pod deintegrate && pod install && cd ../")
+		sh_on_root(command: "flutter packages pub run build_runner build --delete-conflicting-outputs")
+                desc("Building...")
+                sh_on_root(command: "flutter build ipa #{param}")
+        end
+
+	lane :release do |options|
+		env = ENV['IOS_SCHEME']
+		param = env == "dev" ? '--flavor production --dart-define=isTest=true --target=lib/main_pro.dart' : '--flavor production -t lib/main_pro.dart'
+                desc("Cleaning...")
+                sh_on_root(command: "flutter clean && flutter pub get && cd ios/ && pod repo update && pod deintegrate && pod install && cd ../")
+		sh_on_root(command: "flutter packages pub run build_runner build --delete-conflicting-outputs")
+                desc("Building...")
+                sh_on_root(command: "flutter build ipa #{param}")
+        end
+	
+	lane :jira_release do
+                env = ENV['IOS_SCHEME']
+
+                target_branch = env == "dev" ? 'origin/develop' : 'origin/main'
+		release_notes = env == "dev" ? 'development release' : 'production release'
+
+                jira_version_number = get_ipa_info_plist_value(ipa: "../.ipa", key: "CFBundleShortVersionString")
+                jira_build_number = get_ipa_info_plist_value(ipa: "../.ipa", key: "CFBundleVersion")
+                version = jira_version_number + '(' + jira_build_number + ')'
+		source_branch_name = ENV['CI_MERGE_REQUEST_SOURCE_BRANCH_NAME']
+
+                jira_release_url = ""
+                @result_release = HTTParty.post(jira_release_url,
+                        :basic_auth => {:username => ENV['JIRA_USER'], :password => ENV['JIRA_TOKEN']},
+                        :body => { :description => release_notes,
+                                :name => version,
+                                :archived => false,
+                                :released => false,
+                                :userStartDate => ENV["CURRENT_DATE"],
+                                #:userReleaseDate => "28/Jul/2022",
+                                :project => "PM",
+                                :projectId => "10001",
+                                }.to_json,
+                        :headers => { 'Content-Type' => 'application/json' })
+                        puts @result_release
+
+                commits = []
+		commits.append("#{source_branch_name}")
+                mr_commits = changelog_from_git_commits(
+                        between: ["#{target_branch}", "HEAD"],
+                        pretty: "%s %n",
+                        #tag_match_pattern: "[A-Z]{1,}[-][0-9]{1,}",
+                        date_format: "short",
+                        match_lightweight_tag: false,
+                        merge_commit_filtering: "include_merges"
+                )
+                commits.append(mr_commits)
+                commits.each do |commit|
+                        mr = commit.scan(/[A-Z]{1,}[-][0-9]{1,}/)
+                        merges = Array.[](mr)
+                        a_merge = "#{merges}"
+                        c_merge = a_merge.split(' ').each
+                        r_merge = c_merge.uniq
+                        for w_merge in r_merge do
+                                d_merge = w_merge.match(/[A-Z]{1,}[-][0-9]{1,}/)
+                                ticket = d_merge
+                                jira_ticket_url = ""
+
+                                @result_ticket = HTTParty.put(jira_ticket_url,
+                                :basic_auth => {:username => ENV['JIRA_USER'], :password => ENV['JIRA_TOKEN']},
+                                :body => { :update => { :fixVersions => [ {"add" => {"name" => version}}]}}.to_json,
+                                :headers => { 'Content-Type' => 'application/json' })
+                                puts @result_ticket
+                        end
+                end
+        end
+
+        lane :build_dev_firebase_upload do
+                build(sign_enabled: true)
+    		archive(method: "ad-hoc")
+
+		firebase_app_distribution(
+            		app: ENV['APP_ID'],
+            		ipa_path: "",
+            		release_notes_file: "../release-notes.txt",
+            		groups: ENV['GROUP_NAME'],
+            		firebase_cli_token: ENV['FIREBASE_TOKEN']
+		)
+        end
+
+	desc "Uploading app to TestFlight..."
+        lane :upload_testflight do
+                api_key = app_store_connect_api_key(
+                        key_id: ENV['KEY_ID'],
+                        issuer_id: ENV['ISSUER_ID'],
+                        is_key_content_base64: true,
+                        key_content: ENV['KEY_CONTENT']
+                )
+                upload_to_testflight(
+                #username: ENV['DEV_USERNAME'],
+                app_identifier: "",
+                api_key: api_key,
+                ipa: ""
+                )
+        end	
+
+	lane :build_release do
+                release(sign_enabled: true)
+                archive(method: "app-store")
+        end
+
+    lane :get_dev_certs do
+        cert(
+                username: ENV['DEV_USERNAME'],
+                team_name: "",
+                development: true,
+                output_path: "./fastlane/"
+            )
+        sigh(
+                username: ENV['DEV_USERNAME'],
+                team_name: "",
+                app_identifier: "",
+                output_path: "./fastlane/mobileprovision",
+                development: true
+            )
+    end
+end

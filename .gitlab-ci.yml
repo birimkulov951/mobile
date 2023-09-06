@@ -1,0 +1,161 @@
+stages:
+  - test
+  - fastlane
+  - jira_release
+  - upload
+
+.flutter_docker_image:
+  image: harbor
+  script:
+    - init_docker
+  tags:
+    - flutter-android
+
+.nodejs_docker_image:
+  image: harbor
+  script:
+    - init_docker
+  tags:
+    - flutter-android
+
+test:
+  extends: .flutter_docker_image
+  stage: test
+  script:
+    - cd android/
+    - bundle update
+    - bundle exec fastlane test
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    when: never
+  - if: $CI_COMMIT_REF_NAME =~ /^release/ || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^release/
+    when: never
+  - when: always
+
+fastlane_android:
+  cache:
+    key: fastlane
+    paths:
+      - $CI_PROJECT_DIR/.gradle/wrapper
+      - $CI_PROJECT_DIR/.gradle/caches
+      - $CI_PROJECT_DIR/.pub-cache/
+    policy: pull-push
+  extends: .flutter_docker_image
+  stage: fastlane
+  variables:
+    JAVA_TOOL_OPTIONS: $PROXY
+    CACHE_COMPRESSION_LEVEL: "fastest"
+    FF_USE_FASTZIP: "true"
+  before_script:
+    - export PUB_CACHE=$CI_PROJECT_DIR/.pub-cache
+    - export PATH="$PATH":"$PUB_CACHE/bin"
+    - export GRADLE_USER_HOME=$CI_PROJECT_DIR/.gradle
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    variables:
+      RELEASE_DIR_ANDROID: "productionRelease/app-production-release.aab"
+      ANDROID_BUILD_OPS: build_release --env prod
+  - if: $CI_COMMIT_REF_NAME == "develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop"
+    variables:
+      ANDROID_BUILD_OPS: build_dev_firebase_upload --env dev
+      RELEASE_DIR_ANDROID: "developmentRelease/app-development-release.aab"
+  - if: $CI_COMMIT_REF_NAME =~ /^release/ || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^release/
+    variables:
+      RELEASE_DIR_ANDROID: "productionRelease/app-production-release.aab"
+      ANDROID_BUILD_OPS: build_release --env dev
+  script:
+    - cd android/
+    - bundle update
+    - bundle exec fastlane $ANDROID_BUILD_OPS
+    - cd ../ && cp build/app/outputs/bundle/$RELEASE_DIR_ANDROID app-release.aab
+  artifacts:
+    paths:
+      - app-release.aab
+    expire_in: 1 day
+
+fastlane_ios:
+  stage: fastlane
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    variables:
+      IOS_BUILD_OPS: build_release --env prod
+  - if: $CI_COMMIT_REF_NAME == "develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop"
+    variables:
+      IOS_BUILD_OPS: build_dev_firebase_upload --env dev
+  - if: $CI_COMMIT_REF_NAME =~ /^release/ || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^release/
+    variables:
+      IOS_BUILD_OPS: build_release --env dev
+  script:
+    - cd ios/
+    - bundle update
+    - bundle exec fastlane $IOS_BUILD_OPS
+    - cd ../ && cp build/ios/*.ipa PAYNET.ipa
+  artifacts:
+    paths:
+      - PAYNET.ipa
+    expire_in: 1 day
+  tags:
+    - flutter-ios
+
+fastlane_release_jira:
+  stage: jira_release
+  dependencies:
+    - fastlane_ios
+  script:
+    - cd ios/
+    - bundle update
+    - bundle exec fastlane $IOS_JIRA_OPS
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop"
+      variables:
+        IOS_JIRA_OPS: jira_release --env dev
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+      variables:
+        IOS_JIRA_OPS: jira_release --env prod
+  tags:
+    - flutter-ios
+
+upload_to_google_play:
+  extends: .flutter_docker_image
+  stage: upload
+  needs: ["fastlane_android"]
+  dependencies:
+    - fastlane_android
+  script:
+    - cd android/
+    - bundle update
+    - bundle exec fastlane play_market_upload
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+    - if: $CI_COMMIT_REF_NAME =~ /^release/
+  when: manual
+
+upload_to_testflight:
+  stage: upload
+  needs: ["fastlane_ios"]
+  dependencies:
+    - fastlane_ios
+  script:
+    - cd ios/
+    - bundle update
+    - fastlane upload_testflight
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+    - if: $CI_COMMIT_REF_NAME =~ /^release/
+  tags:
+    - flutter-ios
+  when: manual
+
+
+.scripts: &scripts |
+  if [[ -n "${DEBUG_CI+x}" ]] ; then
+    set -x
+  fi
+
+  function init_docker() {
+    echo $HARBOR_ROBOT_PASS | docker login $HARBOR_PATH -u 'robot$flutter' --password-stdin
+  }
+
+before_script:
+  - *scripts
+

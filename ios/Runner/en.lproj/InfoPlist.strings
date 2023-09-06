@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Runner
+
+  Created by Марат Шакиров on 7/21/20.
+  Copyright © 2020 The Chromium Authors. All rights reserved.
+*/
+"NSCameraUsageDescription"="Camera is required for QR-code, card and passport scanning";
+"NSContactsUsageDescription"="This permission is required to select a phone number from the contact book";
+"NSFaceIDUsageDescription"="This permission is required to conveniently unlock the application via FaceID";
+"NSPhotoLibraryUsageDescription"="This permission is required to upload media";

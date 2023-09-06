@@ -1,0 +1,1 @@
+class PhoneNumberNotFoundException implements Exception {}

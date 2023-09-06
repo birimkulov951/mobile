@@ -1,0 +1,146 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+fastlane_require 'dotenv'
+
+default_platform(:android)
+
+platform :android do
+	def root_path
+		Dir.pwd.sub(/.*\Kfastlane/, '').sub(/.*\Kandroid/, '').sub(/.*\Kios/, '').sub(/.*\K\/\//, '')
+  	end
+
+  	lane :sh_on_root do |options|
+    		command = options[:command]
+    		sh("cd #{root_path} && #{command}")
+  	end
+	
+	private_lane :build do
+    		env = ENV['ANDROID_SCHEME']
+
+    		params = env == "dev" ? '--release --dart-define=isTest=true --build-number=$CI_PIPELINE_IID --flavor development --target=lib/main_dev.dart ' : '--release  --dart-define=isTest=true --build-number=$CI_PIPELINE_IID --flavor production --target=lib/main_pro.dart '
+		desc("Cleaning...")
+		sh_on_root(command: "sudo chown -R deployer /builds")
+		sh_on_root(command: "flutter clean && flutter pub get")
+		sh_on_root(command: "flutter packages pub run build_runner build --delete-conflicting-outputs")
+    		desc "Building #{env} Android APK"
+    		sh_on_root(command: "flutter build appbundle #{params}")
+  	end
+
+	private_lane :release do
+                env = ENV['ANDROID_SCHEME']
+
+                params = env == "dev" ? '--release --flavor production --dart-define=isTest=true --target=lib/main_pro.dart ' : '--release --flavor production --target=lib/main_pro.dart '
+                desc("Cleaning...")
+		sh_on_root(command: "sudo chown -R deployer /builds")
+                sh_on_root(command: "flutter clean && flutter pub get")
+		sh_on_root(command: "flutter packages pub run build_runner build --delete-conflicting-outputs")
+                desc "Building #{env} Android APK"
+                sh_on_root(command: "flutter build appbundle #{params}")
+        end
+
+	lane :test do
+		sh_on_root(command: "sudo chown -R deployer /builds")
+		sh_on_root(command: "flutter clean && flutter pub get")
+                sh_on_root(command: "flutter packages pub run build_runner build --delete-conflicting-outputs")
+		sh_on_root(command: "flutter analyze --no-fatal-infos")
+	end	
+
+	lane :jira_release do
+                env = ENV['ANDROID_SCHEME']
+		build_path = env == "dev" ? '/builds/ips-mobile/mobile-ultra/build/app/outputs/bundle/developmentRelease/app-development-release.aab' : '/builds/ips-mobile/mobile-ultra/build/app/outputs/bundle/productionRelease/app-production-release.aab'
+
+                target_branch = env == "dev" ? 'origin/develop' : 'origin/main'
+
+		if options[:version_name]
+      			android_set_version_name(version_name: options[:version_name])
+    		end
+    		android_set_version_code # increment version code
+
+                jira_version_number = android_get_version_name
+                jira_build_number = android_get_version_code
+                version = jira_version_number + '(' + jira_build_number + ')'
+
+                jira_release_url = "https://ipsuz.atlassian.net/rest/api/2/version"
+                @result_release = HTTParty.post(jira_release_url,
+                        :basic_auth => {:username => ENV['JIRA_USER'], :password => ENV['JIRA_TOKEN']},
+                        :body => { :description => 'test fastlane jira',
+                                :name => version,
+                                :archived => false,
+                                :released => false,
+                                :userStartDate => ENV["CURRENT_DATE"],
+                                #:userReleaseDate => "28/Jul/2022",
+                                :project => "PM",
+                                :projectId => "10001",
+                                }.to_json,
+                        :headers => { 'Content-Type' => 'application/json' })
+                        puts @result_release
+
+                commits = []
+                mr_commits = changelog_from_git_commits(
+                        between: ["#{target_branch}", "HEAD"],
+                        pretty: "%s %n",
+                        #tag_match_pattern: "[A-Z]{1,}[-][0-9]{1,}",
+                        date_format: "short",
+                        match_lightweight_tag: false,
+                        merge_commit_filtering: "include_merges"
+                )
+                commits.append(mr_commits)
+                commits.each do |commit|
+                        mr = commit.scan(/[A-Z]{1,}[-][0-9]{1,}/)
+                        merges = Array.[](mr)
+                        a_merge = "#{merges}"
+                        c_merge = a_merge.split(' ').each
+                        r_merge = c_merge.uniq
+                        for w_merge in r_merge do
+                                d_merge = w_merge.match(/[A-Z]{1,}[-][0-9]{1,}/)
+                                ticket = d_merge
+                                jira_ticket_url = "https://ipsuz.atlassian.net/rest/api/2/issue/#{ticket}"
+
+                                @result_ticket = HTTParty.put(jira_ticket_url,
+                                :basic_auth => {:username => ENV['JIRA_USER'], :password => ENV['JIRA_TOKEN']},
+                                :body => { :update => { :fixVersions => [ {"add" => {"name" => version}}]}}.to_json,
+                                :headers => { 'Content-Type' => 'application/json' })
+                                puts @result_ticket
+                        end
+                end
+        end
+	
+	lane :play_market_upload do
+		env = ENV['ANDROID_SCHEME']
+
+		upload_to_play_store(
+   		track: "internal",
+		aab: "../app-release.aab"
+		)
+	end
+	
+	lane :build_dev_firebase_upload do
+		env = ENV['ANDROID_SCHEME']
+                build
+		artifact_path = env == "dev" ? '/builds/ips-mobile/mobile-ultra/build/app/outputs/bundle/developmentRelease/app-development-release.aab' : '/builds/ips-mobile/mobile-ultra/build/app/outputs/bundle/productionRelease/app-production-release.aab'
+		firebase_app_distribution(
+            		app: ENV[''],
+			android_artifact_path: "#{artifact_path}",
+            		release_notes_file: "../release-notes.txt",
+            		groups: ENV['ANDROID_TEST_GROUP'],
+            		firebase_cli_token: ENV['']
+		)
+        end
+
+	lane :build_release do
+                release
+        end
+end

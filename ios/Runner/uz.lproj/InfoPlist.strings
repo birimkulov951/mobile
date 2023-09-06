@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Runner
+
+  Created by Марат Шакиров on 7/21/20.
+  Copyright © 2020 The Chromium Authors. All rights reserved.
+*/
+"NSCameraUsageDescription"="Ushbu ruxsat QR-kodlari, kartalar yoki hujjatlarni skanerlash uchun talab qilinadi";
+"NSContactsUsageDescription"="Kontaktlar kitobidan telefon raqamini tanlash uchun ushbu ruxsat talab qilinadi";
+"NSFaceIDUsageDescription"="Ushbu ruxsat dasturni FaceID orqali qulay ravishda blokdan chiqarish uchun talab qilinadi";
+"NSPhotoLibraryUsageDescription"="Ushbu ruxsat ommaviy axborot ma'lumotlariga kirish uchun talab qilinadi";
